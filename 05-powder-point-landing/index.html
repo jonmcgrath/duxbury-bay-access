@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05. Powder Point Landing — Duxbury Bay</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #222; }
+
+    /* ── Header ── */
+    header {
+      background: #C0392B; color: white;
+      padding: 16px 28px;
+    }
+    header .back {
+      font-size: 13px; color: rgba(255,255,255,0.8);
+      text-decoration: none; display: inline-block; margin-bottom: 6px;
+    }
+    header .back:hover { color: white; }
+    header h1 { font-size: 24px; margin-bottom: 4px; }
+    header .meta { font-size: 13px; opacity: 0.85; }
+
+    /* ── Nav ── */
+    nav {
+      background: #2c3e50; padding: 0 16px;
+      display: flex; flex-wrap: wrap; gap: 4px;
+    }
+    nav a {
+      color: #cde; text-decoration: none;
+      padding: 10px 16px; display: inline-block;
+      font-size: 14px; border-bottom: 3px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    nav a:hover { color: white; border-bottom-color: #C0392B; }
+
+    /* ── Content ── */
+    main { max-width: 1140px; margin: 24px auto; padding: 0 20px 40px; }
+
+    section {
+      background: white; border-radius: 8px;
+      padding: 24px 28px; margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    section h2 {
+      font-size: 18px; color: #C0392B;
+      border-bottom: 2px solid #C0392B;
+      padding-bottom: 8px; margin-bottom: 16px;
+    }
+    section img {
+      max-width: 100%; height: auto;
+      border-radius: 6px; border: 1px solid #e0e0e0;
+    }
+
+    /* ── Info grid ── */
+    .info-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px;
+      font-size: 14px;
+    }
+    .info-grid dt { font-weight: bold; color: #555; }
+    .info-grid dd { margin: 0; }
+
+    /* ── Placeholder ── */
+    .placeholder {
+      border: 2px dashed #d0d5dd; border-radius: 6px;
+      padding: 40px 24px; text-align: center; color: #999;
+      background: #fafbfc;
+    }
+    .placeholder p { font-size: 15px; margin-bottom: 8px; }
+    .placeholder small { font-size: 12px; }
+
+    /* ── Maps side by side ── */
+    .map-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .map-pair figure { margin: 0; }
+    .map-pair figcaption { font-size: 13px; color: #666; margin-top: 6px; text-align: center; }
+
+    @media (max-width: 700px) {
+      .map-pair { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="../all-sites-map.html" class="back">← Back to All Sites Map</a>
+  <h1>05. Powder Point Landing</h1>
+  <div class="meta">Town Landing &nbsp;·&nbsp; Powder Point Ave, Duxbury MA</div>
+</header>
+
+<nav>
+  <a href="#maps">Maps</a>
+  <a href="#parking">Parking</a>
+  <a href="#conditions">Existing Conditions</a>
+  <a href="#mitigation">Mitigation Plans</a>
+</nav>
+
+<main>
+  
+
+  <!-- ── Maps ── -->
+  <section id="maps">
+    <h2>Maps</h2>
+    <div class="map-pair">
+      <figure>
+        <a href="overview.png" target="_blank">
+          <img src="overview.png" alt="Overview map — Powder Point Landing">
+        </a>
+        <figcaption>Overview — full Duxbury Bay context (click to enlarge)</figcaption>
+      </figure>
+      <figure>
+        <a href="detail.png" target="_blank">
+          <img src="detail.png" alt="Detail map — Powder Point Landing">
+        </a>
+        <figcaption>Close-up — site location detail (click to enlarge)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── Parking ── -->
+  <section id="parking">
+    <h2>Parking &amp; Access</h2>
+    <dl class="info-grid">
+      <dt>Capacity</dt>
+      <dd>Limited</dd>
+      <dt>Address</dt>
+      <dd>Powder Point Ave, Duxbury MA</dd>
+      <dt>Coordinates</dt>
+      <dd>42.0483, -70.6479</dd>
+      <dt>Category</dt>
+      <dd>Town Landing</dd>
+    </dl>
+    <p style="margin-top:14px;font-size:14px;color:#444;">Near Powder Point Bridge; paddle/small boat access to bay</p>
+  </section>
+
+  <!-- ── Existing Conditions ── -->
+  <section id="conditions">
+    <h2>Existing Conditions</h2>
+    <div class="placeholder">
+      <p>No conditions data recorded yet.</p>
+      <small>Add field notes, photos, and observations here.</small>
+    </div>
+  </section>
+
+  <!-- ── Mitigation Plans ── -->
+  <section id="mitigation">
+    <h2>Mitigation Plans</h2>
+    <div class="placeholder">
+      <p>No mitigation plan recorded yet.</p>
+      <small>Add proposed improvements, timeline, and responsible parties here.</small>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duxbury Bay — Public Access Points</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #1a2634; font-family: Arial, Helvetica, sans-serif; }
+    header {
+      background: #2c3e50; color: white;
+      padding: 12px 24px; display: flex; align-items: center; gap: 16px;
+    }
+    header h1 { font-size: 20px; font-weight: bold; }
+    header p  { font-size: 13px; color: #aac; }
+    .map-container {
+      position: relative; display: inline-block;
+      margin: 16px auto; display: block; width: 1200px;
+    }
+    #base-map { display: block; width: 1200px; height: 1050px; }
+    #overlay  { position: absolute; top: 0; left: 0; pointer-events: none; }
+    .marker-link { pointer-events: all; cursor: pointer; }
+    .marker-link .dot { transition: filter 0.15s, r 0.15s; }
+    .marker-link:hover .dot { filter: brightness(1.35); }
+    .marker-link:hover .lbl { font-size: 13px; }
+    .marker-link:focus { outline: none; }
+    .marker-link:focus .dot { stroke: white; stroke-width: 2; }
+    footer {
+      text-align: center; padding: 12px; color: #667;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Duxbury Bay — Public Water Access Points</h1>
+      <p>Duxbury Bay Management Commission · Click any marker to view site details</p>
+    </div>
+  </header>
+
+  <div class="map-container">
+    <img id="base-map" src="all-sites-base.png" width="1200" height="1050" alt="Duxbury Bay map">
+    <svg id="overlay" width="1200" height="1050" viewBox="0 0 1200 1050"
+         xmlns="http://www.w3.org/2000/svg">
+      
+  <rect x="14" y="14" width="660" height="479" rx="7" fill="white" fill-opacity="0.93" stroke="#bbb" stroke-width="1.2"/>
+  <text x="28" y="45" font-size="17" font-weight="bold" fill="#111" font-family="Arial,sans-serif">Duxbury Bay — Public Access Points</text>
+  <text x="28" y="62" font-size="12" fill="#555" font-family="Arial,sans-serif">22 Town Landings · 5 Ways to the Water  |  Click a marker to open site details</text>
+  <g transform="translate(28,14)" font-family="Arial,sans-serif"><text x="14" y="60" font-size="13" font-weight="bold" fill="#C0392B" font-family="Arial,sans-serif" letter-spacing="0.5">TOWN LANDINGS</text>
+    <circle cx="23" cy="86.7" r="9" fill="#C0392B"/>
+    <text x="23" y="86.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">1</text>
+    <text x="37" y="91.7" font-size="13" fill="#111" font-family="Arial,sans-serif">01. Ford Stand Landing</text>
+    <circle cx="23" cy="108.7" r="9" fill="#C0392B"/>
+    <text x="23" y="108.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">2</text>
+    <text x="37" y="113.7" font-size="13" fill="#111" font-family="Arial,sans-serif">02. Old Cove Landing</text>
+    <circle cx="23" cy="130.7" r="9" fill="#C0392B"/>
+    <text x="23" y="130.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">3</text>
+    <text x="37" y="135.7" font-size="13" fill="#111" font-family="Arial,sans-serif">03. Drew Salt Works Landing</text>
+    <circle cx="23" cy="152.7" r="9" fill="#C0392B"/>
+    <text x="23" y="152.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">4</text>
+    <text x="37" y="157.7" font-size="13" fill="#111" font-family="Arial,sans-serif">04. Shipyard Lane (Ellison Beach)</text>
+    <circle cx="23" cy="174.7" r="9" fill="#C0392B"/>
+    <text x="23" y="174.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">5</text>
+    <text x="37" y="179.7" font-size="13" fill="#111" font-family="Arial,sans-serif">05. Powder Point Landing</text>
+    <circle cx="23" cy="196.7" r="9" fill="#C0392B"/>
+    <text x="23" y="196.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">6</text>
+    <text x="37" y="201.7" font-size="13" fill="#111" font-family="Arial,sans-serif">06. Powder Point Bridge (W. End)</text>
+    <circle cx="23" cy="218.7" r="9" fill="#C0392B"/>
+    <text x="23" y="218.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">7</text>
+    <text x="37" y="223.7" font-size="13" fill="#111" font-family="Arial,sans-serif">07. Anchorage Lane Landing</text>
+    <circle cx="23" cy="240.7" r="9" fill="#C0392B"/>
+    <text x="23" y="240.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">8</text>
+    <text x="37" y="245.7" font-size="13" fill="#111" font-family="Arial,sans-serif">08. Bluefish River Landing</text>
+    <circle cx="23" cy="262.7" r="9" fill="#C0392B"/>
+    <text x="23" y="262.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">9</text>
+    <text x="37" y="267.7" font-size="13" fill="#111" font-family="Arial,sans-serif">09. Sagamore Road Landing</text>
+    <circle cx="23" cy="284.7" r="9" fill="#C0392B"/>
+    <text x="23" y="284.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">10</text>
+    <text x="37" y="289.7" font-size="13" fill="#111" font-family="Arial,sans-serif">10. Mattakeeset Town Pier</text>
+    <circle cx="23" cy="306.7" r="9" fill="#C0392B"/>
+    <text x="23" y="306.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">11</text>
+    <text x="37" y="311.7" font-size="13" fill="#111" font-family="Arial,sans-serif">11. Winsor Street Landing</text>
+    <circle cx="349" cy="86.7" r="9" fill="#C0392B"/>
+    <text x="349" y="86.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">12</text>
+    <text x="363" y="91.7" font-size="13" fill="#111" font-family="Arial,sans-serif">12. Jocelyn Lane Landing *</text>
+    <circle cx="349" cy="108.7" r="9" fill="#C0392B"/>
+    <text x="349" y="108.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">13</text>
+    <text x="363" y="113.7" font-size="13" fill="#111" font-family="Arial,sans-serif">13. Massasoit Road Landing</text>
+    <circle cx="349" cy="130.7" r="9" fill="#C0392B"/>
+    <text x="349" y="130.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">14</text>
+    <text x="363" y="135.7" font-size="13" fill="#111" font-family="Arial,sans-serif">14. Water Street Landing</text>
+    <circle cx="349" cy="152.7" r="9" fill="#C0392B"/>
+    <text x="349" y="152.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">15</text>
+    <text x="363" y="157.7" font-size="13" fill="#111" font-family="Arial,sans-serif">15. Harden Hill Road Landing</text>
+    <circle cx="349" cy="174.7" r="9" fill="#C0392B"/>
+    <text x="349" y="174.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">16</text>
+    <text x="363" y="179.7" font-size="13" fill="#111" font-family="Arial,sans-serif">16. Elderberry Lane</text>
+    <circle cx="349" cy="196.7" r="9" fill="#C0392B"/>
+    <text x="349" y="196.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">17</text>
+    <text x="363" y="201.7" font-size="13" fill="#111" font-family="Arial,sans-serif">17. Bay Farm</text>
+    <circle cx="349" cy="218.7" r="9" fill="#C0392B"/>
+    <text x="349" y="218.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">18</text>
+    <text x="363" y="223.7" font-size="13" fill="#111" font-family="Arial,sans-serif">18. Hicks Point Road Landing</text>
+    <circle cx="349" cy="240.7" r="9" fill="#C0392B"/>
+    <text x="349" y="240.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">19</text>
+    <text x="363" y="245.7" font-size="13" fill="#111" font-family="Arial,sans-serif">19. Miles Standish Home Site</text>
+    <circle cx="349" cy="262.7" r="9" fill="#C0392B"/>
+    <text x="349" y="262.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">20</text>
+    <text x="363" y="267.7" font-size="13" fill="#111" font-family="Arial,sans-serif">20. Howland's Landing</text>
+    <circle cx="349" cy="284.7" r="9" fill="#C0392B"/>
+    <text x="349" y="284.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">21</text>
+    <text x="363" y="289.7" font-size="13" fill="#111" font-family="Arial,sans-serif">21. Landing Road Beach</text>
+    <circle cx="349" cy="306.7" r="9" fill="#C0392B"/>
+    <text x="349" y="306.7" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">22</text>
+    <text x="363" y="311.7" font-size="13" fill="#111" font-family="Arial,sans-serif">22. Island Creek Pond</text><text x="14" y="329.5" font-size="13" font-weight="bold" fill="#1A6FA8" font-family="Arial,sans-serif" letter-spacing="0.5">WAYS TO THE WATER</text>
+    <circle cx="23" cy="356.2" r="9" fill="#1A6FA8"/>
+    <text x="23" y="356.2" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">W1</text>
+    <text x="37" y="361.2" font-size="13" fill="#111" font-family="Arial,sans-serif">WW-01. Simeon Soule's Landing *</text>
+    <circle cx="23" cy="378.2" r="9" fill="#1A6FA8"/>
+    <text x="23" y="378.2" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">W2</text>
+    <text x="37" y="383.2" font-size="13" fill="#111" font-family="Arial,sans-serif">WW-02. Elder Brewster Road</text>
+    <circle cx="23" cy="400.2" r="9" fill="#1A6FA8"/>
+    <text x="23" y="400.2" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">W3</text>
+    <text x="37" y="405.2" font-size="13" fill="#111" font-family="Arial,sans-serif">WW-03. Somerset Road *</text>
+    <circle cx="23" cy="422.2" r="9" fill="#1A6FA8"/>
+    <text x="23" y="422.2" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">W4</text>
+    <text x="37" y="427.2" font-size="13" fill="#111" font-family="Arial,sans-serif">WW-04. Peterson's Landing</text>
+    <circle cx="23" cy="444.2" r="9" fill="#1A6FA8"/>
+    <text x="23" y="444.2" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">W5</text>
+    <text x="37" y="449.2" font-size="13" fill="#111" font-family="Arial,sans-serif">WW-05. Longview Road *</text><text x="14" y="467" font-size="11" fill="#888" font-family="Arial,sans-serif">* Location approximate — verify against Chapter 7</text></g>
+      
+  <a href="01-ford-stand-landing/index.html" class="marker-link">
+    <title>01. Ford Stand Landing</title>
+    <circle cx="1050" cy="53" r="20" fill="transparent"/>
+    <circle cx="1050" cy="53" r="14" fill="#C0392B" class="dot"/>
+    <text x="1050" y="53" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">1</text>
+  </a>
+  <a href="02-old-cove-landing/index.html" class="marker-link">
+    <title>02. Old Cove Landing</title>
+    <circle cx="778" cy="239" r="20" fill="transparent"/>
+    <circle cx="778" cy="239" r="14" fill="#C0392B" class="dot"/>
+    <text x="778" y="239" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">2</text>
+  </a>
+  <a href="03-drew-salt-works-landing/index.html" class="marker-link">
+    <title>03. Drew Salt Works Landing</title>
+    <circle cx="811" cy="239" r="20" fill="transparent"/>
+    <circle cx="811" cy="239" r="14" fill="#C0392B" class="dot"/>
+    <text x="811" y="239" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">3</text>
+  </a>
+  <a href="04-shipyard-lane-ellison-beach/index.html" class="marker-link">
+    <title>04. Shipyard Lane (Ellison Beach)</title>
+    <circle cx="782" cy="613" r="20" fill="transparent"/>
+    <circle cx="782" cy="613" r="14" fill="#C0392B" class="dot"/>
+    <text x="782" y="613" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">4</text>
+  </a>
+  <a href="05-powder-point-landing/index.html" class="marker-link">
+    <title>05. Powder Point Landing</title>
+    <circle cx="1056" cy="285" r="20" fill="transparent"/>
+    <circle cx="1056" cy="285" r="14" fill="#C0392B" class="dot"/>
+    <text x="1056" y="285" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">5</text>
+  </a>
+  <a href="06-powder-point-bridge-west-end/index.html" class="marker-link">
+    <title>06. Powder Point Bridge (W. End)</title>
+    <circle cx="1043" cy="285" r="20" fill="transparent"/>
+    <circle cx="1043" cy="285" r="14" fill="#C0392B" class="dot"/>
+    <text x="1043" y="285" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">6</text>
+  </a>
+  <a href="07-anchorage-lane-landing/index.html" class="marker-link">
+    <title>07. Anchorage Lane Landing</title>
+    <circle cx="741" cy="312" r="20" fill="transparent"/>
+    <circle cx="741" cy="312" r="14" fill="#C0392B" class="dot"/>
+    <text x="741" y="312" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">7</text>
+  </a>
+  <a href="08-bluefish-river-landing/index.html" class="marker-link">
+    <title>08. Bluefish River Landing</title>
+    <circle cx="747" cy="340" r="20" fill="transparent"/>
+    <circle cx="747" cy="340" r="14" fill="#C0392B" class="dot"/>
+    <text x="747" y="340" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">8</text>
+  </a>
+  <a href="09-sagamore-road-landing/index.html" class="marker-link">
+    <title>09. Sagamore Road Landing</title>
+    <circle cx="792" cy="895" r="20" fill="transparent"/>
+    <circle cx="792" cy="895" r="14" fill="#C0392B" class="dot"/>
+    <text x="792" y="895" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">9</text>
+  </a>
+  <a href="10-mattakeeset-town-pier/index.html" class="marker-link">
+    <title>10. Mattakeeset Town Pier</title>
+    <circle cx="795" cy="426" r="20" fill="transparent"/>
+    <circle cx="795" cy="426" r="14" fill="#C0392B" class="dot"/>
+    <text x="795" y="426" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">10</text>
+  </a>
+  <a href="11-winsor-street-landing/index.html" class="marker-link">
+    <title>11. Winsor Street Landing</title>
+    <circle cx="784" cy="495" r="20" fill="transparent"/>
+    <circle cx="784" cy="495" r="14" fill="#C0392B" class="dot"/>
+    <text x="784" y="495" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">11</text>
+  </a>
+  <a href="12-jocelyn-lane-landing/index.html" class="marker-link">
+    <title>12. Jocelyn Lane Landing</title>
+    <circle cx="717" cy="729" r="20" fill="transparent"/>
+    <circle cx="717" cy="729" r="14" fill="#C0392B" class="dot"/>
+    <text x="717" y="729" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">12</text>
+  </a>
+  <a href="13-massasoit-road-landing/index.html" class="marker-link">
+    <title>13. Massasoit Road Landing</title>
+    <circle cx="775" cy="903" r="20" fill="transparent"/>
+    <circle cx="775" cy="903" r="14" fill="#C0392B" class="dot"/>
+    <text x="775" y="903" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">13</text>
+  </a>
+  <a href="14-water-street-landing/index.html" class="marker-link">
+    <title>14. Water Street Landing</title>
+    <circle cx="778" cy="527" r="20" fill="transparent"/>
+    <circle cx="778" cy="527" r="14" fill="#C0392B" class="dot"/>
+    <text x="778" y="527" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">14</text>
+  </a>
+  <a href="15-harden-hill-road-landing/index.html" class="marker-link">
+    <title>15. Harden Hill Road Landing</title>
+    <circle cx="697" cy="674" r="20" fill="transparent"/>
+    <circle cx="697" cy="674" r="14" fill="#C0392B" class="dot"/>
+    <text x="697" y="674" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">15</text>
+  </a>
+  <a href="16-elderberry-lane/index.html" class="marker-link">
+    <title>16. Elderberry Lane</title>
+    <circle cx="631" cy="745" r="20" fill="transparent"/>
+    <circle cx="631" cy="745" r="14" fill="#C0392B" class="dot"/>
+    <text x="631" y="745" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">16</text>
+  </a>
+  <a href="17-bay-farm/index.html" class="marker-link">
+    <title>17. Bay Farm</title>
+    <circle cx="297" cy="995" r="20" fill="transparent"/>
+    <circle cx="297" cy="995" r="14" fill="#C0392B" class="dot"/>
+    <text x="297" y="995" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">17</text>
+  </a>
+  <a href="18-hicks-point-road-landing/index.html" class="marker-link">
+    <title>18. Hicks Point Road Landing</title>
+    <circle cx="331" cy="903" r="20" fill="transparent"/>
+    <circle cx="331" cy="903" r="14" fill="#C0392B" class="dot"/>
+    <text x="331" y="903" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">18</text>
+  </a>
+  <a href="19-miles-standish-home-site/index.html" class="marker-link">
+    <title>19. Miles Standish Home Site</title>
+    <circle cx="656" cy="825" r="20" fill="transparent"/>
+    <circle cx="656" cy="825" r="14" fill="#C0392B" class="dot"/>
+    <text x="656" y="825" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">19</text>
+  </a>
+  <a href="20-howlands-landing/index.html" class="marker-link">
+    <title>20. Howland's Landing</title>
+    <circle cx="626" cy="883" r="20" fill="transparent"/>
+    <circle cx="626" cy="883" r="14" fill="#C0392B" class="dot"/>
+    <text x="626" y="883" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">20</text>
+  </a>
+  <a href="21-landing-road-beach/index.html" class="marker-link">
+    <title>21. Landing Road Beach</title>
+    <circle cx="437" cy="834" r="20" fill="transparent"/>
+    <circle cx="437" cy="834" r="14" fill="#C0392B" class="dot"/>
+    <text x="437" y="834" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">21</text>
+  </a>
+  <a href="22-island-creek-pond/index.html" class="marker-link">
+    <title>22. Island Creek Pond</title>
+    <circle cx="318" cy="602" r="20" fill="transparent"/>
+    <circle cx="318" cy="602" r="14" fill="#C0392B" class="dot"/>
+    <text x="318" y="602" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">22</text>
+  </a>
+  <a href="WW-01-simeon-soules-landing/index.html" class="marker-link">
+    <title>WW-01. Simeon Soule's Landing</title>
+    <circle cx="926" cy="494" r="20" fill="transparent"/>
+    <circle cx="926" cy="494" r="14" fill="#1A6FA8" class="dot"/>
+    <text x="926" y="494" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">W1</text>
+  </a>
+  <a href="WW-02-elder-brewster-road/index.html" class="marker-link">
+    <title>WW-02. Elder Brewster Road</title>
+    <circle cx="795" cy="873" r="20" fill="transparent"/>
+    <circle cx="795" cy="873" r="14" fill="#1A6FA8" class="dot"/>
+    <text x="795" y="873" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">W2</text>
+  </a>
+  <a href="WW-03-somerset-road/index.html" class="marker-link">
+    <title>WW-03. Somerset Road</title>
+    <circle cx="717" cy="274" r="20" fill="transparent"/>
+    <circle cx="717" cy="274" r="14" fill="#1A6FA8" class="dot"/>
+    <text x="717" y="274" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">W3</text>
+  </a>
+  <a href="WW-04-petersons-landing/index.html" class="marker-link">
+    <title>WW-04. Peterson's Landing</title>
+    <circle cx="699" cy="279" r="20" fill="transparent"/>
+    <circle cx="699" cy="279" r="14" fill="#1A6FA8" class="dot"/>
+    <text x="699" y="279" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">W4</text>
+  </a>
+  <a href="WW-05-longview-road/index.html" class="marker-link">
+    <title>WW-05. Longview Road</title>
+    <circle cx="612" cy="799" r="20" fill="transparent"/>
+    <circle cx="612" cy="799" r="14" fill="#1A6FA8" class="dot"/>
+    <text x="612" y="799" text-anchor="middle" dominant-baseline="central"
+          font-size="11" font-weight="bold" fill="white"
+          font-family="Arial,sans-serif" class="lbl">W5</text>
+  </a>
+    </svg>
+  </div>
+
+  <footer>Duxbury Bay Management Plan · Chapter 7 Public Access Points · Map tiles © OpenStreetMap contributors</footer>
+</body>
+</html>
