@@ -74,9 +74,32 @@
     .map-pair figure { margin: 0; }
     .map-pair figcaption { font-size: 13px; color: #666; margin-top: 6px; text-align: center; }
 
+    /* ── Site navigation bar ── */
+    .sitenav {
+      background: #1a2634; padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .sitenav-btn {
+      color: white; text-decoration: none; font-size: 13px;
+      background: rgba(255,255,255,0.12); border-radius: 5px;
+      padding: 8px 14px; transition: background 0.15s;
+      white-space: nowrap; max-width: 320px;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .sitenav-btn:hover { background: rgba(255,255,255,0.25); }
+    .sitenav-btn.disabled { opacity: 0.35; cursor: default; }
+    .sitenav-home {
+      color: white; text-decoration: none; font-size: 13px; font-weight: bold;
+      background: #C0392B; border-radius: 5px; padding: 8px 18px;
+      transition: opacity 0.15s;
+    }
+    .sitenav-home:hover { opacity: 0.85; }
+
     @media (max-width: 700px) {
       .map-pair { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
+      .sitenav { justify-content: center; }
     }
   </style>
 </head>
@@ -93,6 +116,10 @@
   <a href="#parking">Parking</a>
   <a href="#conditions">Existing Conditions</a>
   <a href="#mitigation">Mitigation Plans</a>
+  <span style="flex:1"></span>
+  <a href="../04-shipyard-lane-ellison-beach/index.html">&#8592; 04. Shipyard Lane (Ellison Beach)</a>
+  <a href="../all-sites-map.html" style="font-weight:bold;">&#8962; Home</a>
+  <a href="../06-powder-point-bridge-west-end/index.html">06. Powder Point Bridge (W. End) &#8594;</a>
 </nav>
 
 <main>
@@ -152,6 +179,13 @@
   </section>
 
 </main>
+
+<!-- ── Bottom site navigation ── -->
+<div class="sitenav">
+  <a href="../04-shipyard-lane-ellison-beach/index.html" class="sitenav-btn">&#8592; 04. Shipyard Lane (Ellison Beach)</a>
+  <a href="../all-sites-map.html" class="sitenav-home">&#8962; All Sites Map</a>
+  <a href="../06-powder-point-bridge-west-end/index.html" class="sitenav-btn">&#8594; 06. Powder Point Bridge (W. End)</a>
+</div>
 
 </body>
 </html>

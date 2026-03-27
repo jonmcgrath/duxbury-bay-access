@@ -189,13 +189,20 @@ function accentColor(site) {
   return site.category === 'town-landing' ? '#C0392B' : '#1A6FA8';
 }
 
-function generateSiteHTML(site) {
+function generateSiteHTML(site, prev, next) {
   const folder   = path.join(__dirname, `${site.id}-${site.slug}`);
   const accent   = accentColor(site);
   const catLabel = categoryLabel(site);
   const approxNote = site.approx
     ? '<p style="color:#c0392b;font-size:13px">⚠️ Coordinates are approximate — verify against Chapter 7.</p>'
     : '';
+
+  const prevLink = prev
+    ? `<a href="../${prev.id}-${prev.slug}/index.html" class="sitenav-btn">&#8592; ${prev.id}. ${prev.name}</a>`
+    : `<span class="sitenav-btn disabled">&#8592; First Site</span>`;
+  const nextLink = next
+    ? `<a href="../${next.id}-${next.slug}/index.html" class="sitenav-btn">&#8594; ${next.id}. ${next.name}</a>`
+    : `<span class="sitenav-btn disabled">Last Site &#8594;</span>`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -273,9 +280,32 @@ function generateSiteHTML(site) {
     .map-pair figure { margin: 0; }
     .map-pair figcaption { font-size: 13px; color: #666; margin-top: 6px; text-align: center; }
 
+    /* ── Site navigation bar ── */
+    .sitenav {
+      background: #1a2634; padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .sitenav-btn {
+      color: white; text-decoration: none; font-size: 13px;
+      background: rgba(255,255,255,0.12); border-radius: 5px;
+      padding: 8px 14px; transition: background 0.15s;
+      white-space: nowrap; max-width: 320px;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .sitenav-btn:hover { background: rgba(255,255,255,0.25); }
+    .sitenav-btn.disabled { opacity: 0.35; cursor: default; }
+    .sitenav-home {
+      color: white; text-decoration: none; font-size: 13px; font-weight: bold;
+      background: ${accent}; border-radius: 5px; padding: 8px 18px;
+      transition: opacity 0.15s;
+    }
+    .sitenav-home:hover { opacity: 0.85; }
+
     @media (max-width: 700px) {
       .map-pair { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
+      .sitenav { justify-content: center; }
     }
   </style>
 </head>
@@ -292,6 +322,10 @@ function generateSiteHTML(site) {
   <a href="#parking">Parking</a>
   <a href="#conditions">Existing Conditions</a>
   <a href="#mitigation">Mitigation Plans</a>
+  <span style="flex:1"></span>
+  ${prev ? `<a href="../${prev.id}-${prev.slug}/index.html">&#8592; ${prev.id}. ${prev.name}</a>` : ''}
+  <a href="../all-sites-map.html" style="font-weight:bold;">&#8962; Home</a>
+  ${next ? `<a href="../${next.id}-${next.slug}/index.html">${next.id}. ${next.name} &#8594;</a>` : ''}
 </nav>
 
 <main>
@@ -352,6 +386,13 @@ function generateSiteHTML(site) {
 
 </main>
 
+<!-- ── Bottom site navigation ── -->
+<div class="sitenav">
+  ${prevLink}
+  <a href="../all-sites-map.html" class="sitenav-home">&#8962; All Sites Map</a>
+  ${nextLink}
+</div>
+
 </body>
 </html>`;
 
@@ -366,8 +407,10 @@ function main() {
   generateMapHTML();
 
   console.log('\nGenerating site pages…');
-  for (const site of ALL_SITES) {
-    generateSiteHTML(site);
+  for (let i = 0; i < ALL_SITES.length; i++) {
+    const prev = i > 0                    ? ALL_SITES[i - 1] : null;
+    const next = i < ALL_SITES.length - 1 ? ALL_SITES[i + 1] : null;
+    generateSiteHTML(ALL_SITES[i], prev, next);
   }
 
   console.log('\nDone.');
