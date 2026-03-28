@@ -97,7 +97,7 @@ function legendSVG() {
 
   const boxW=col2X+320, boxH=noteY+12;
   return `
-  <rect x="${pad}" y="${pad}" width="${boxW}" height="${boxH}" rx="7" fill="white" fill-opacity="0.30" stroke="#bbb" stroke-width="1.2"/>
+  <rect x="${pad}" y="${pad}" width="${boxW}" height="${boxH}" rx="7" fill="white" fill-opacity="0.20" stroke="#bbb" stroke-width="1.2"/>
   <text x="${pad+pad}" y="${pad+pad+17}" font-size="17" font-weight="bold" fill="#111" font-family="Arial,sans-serif">Duxbury Bay — Public Access Points</text>
   <text x="${pad+pad}" y="${pad+pad+34}" font-size="12" fill="#555" font-family="Arial,sans-serif">${TOWN_LANDINGS.length} Town Landings · ${WAYS_TO_WATER.length} Ways to the Water  |  Click a marker to open site details</text>
   <g transform="translate(${pad+pad},${pad})" font-family="Arial,sans-serif">${rows}</g>`;
@@ -306,16 +306,14 @@ function generateSiteHTML(site, prev, next) {
     .home-tab {
       position: fixed; left: 0; top: 50%;
       transform: translateY(-50%);
-      background: rgba(44,62,80,0.55);
+      background: rgba(44,62,80,0.60);
       color: white; text-decoration: none;
-      writing-mode: vertical-rl; text-orientation: mixed;
-      transform: translateY(-50%) rotate(180deg);
-      padding: 18px 10px; border-radius: 0 10px 10px 0;
+      writing-mode: vertical-lr;
+      padding: 20px 12px; border-radius: 0 10px 10px 0;
       font-size: 14px; font-weight: bold; letter-spacing: 1px;
       z-index: 1000; transition: background 0.15s;
-      white-space: nowrap;
     }
-    .home-tab:hover { background: rgba(44,62,80,0.85); }
+    .home-tab:hover { background: rgba(44,62,80,0.90); }
 
     @media (max-width: 700px) {
       .map-pair { grid-template-columns: 1fr; }
