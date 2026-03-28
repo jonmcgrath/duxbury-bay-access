@@ -96,6 +96,21 @@
     }
     .sitenav-home:hover { opacity: 0.85; }
 
+    /* ── Fixed home tab ── */
+    .home-tab {
+      position: fixed; left: 0; top: 50%;
+      transform: translateY(-50%);
+      background: rgba(44,62,80,0.55);
+      color: white; text-decoration: none;
+      writing-mode: vertical-rl; text-orientation: mixed;
+      transform: translateY(-50%) rotate(180deg);
+      padding: 18px 10px; border-radius: 0 10px 10px 0;
+      font-size: 14px; font-weight: bold; letter-spacing: 1px;
+      z-index: 1000; transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .home-tab:hover { background: rgba(44,62,80,0.85); }
+
     @media (max-width: 700px) {
       .map-pair { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
@@ -104,6 +119,8 @@
   </style>
 </head>
 <body>
+
+<a href="../all-sites-map.html" class="home-tab">&#8962; All Sites Map</a>
 
 <header>
   <a href="../all-sites-map.html" class="back">← Back to All Sites Map</a>
@@ -118,7 +135,6 @@
   <a href="#mitigation">Mitigation Plans</a>
   <span style="flex:1"></span>
   
-  <a href="../all-sites-map.html" style="font-weight:bold;">&#8962; Home</a>
   <a href="../02-old-cove-landing/index.html">02. Old Cove Landing &#8594;</a>
 </nav>
 

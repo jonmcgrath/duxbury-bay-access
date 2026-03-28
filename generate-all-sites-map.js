@@ -154,7 +154,7 @@ function buildOverlaySVG() {
 
   const legendSVG = `
   <rect x="${pad}" y="${pad}" width="${boxW}" height="${boxH}"
-        rx="7" fill="white" fill-opacity="0.93" stroke="#bbb" stroke-width="1.2"/>
+        rx="7" fill="white" fill-opacity="0.30" stroke="#bbb" stroke-width="1.2"/>
   <text x="${pad + pad}" y="${pad + pad + 17}"
         font-size="17" font-weight="bold" fill="#111"
         font-family="Arial, Helvetica, sans-serif">Duxbury Bay — Public Access Points</text>
