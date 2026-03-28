@@ -97,9 +97,9 @@ function legendSVG() {
 
   const boxW=col2X+320, boxH=noteY+12;
   return `
-  <rect x="${pad}" y="${pad}" width="${boxW}" height="${boxH}" rx="7" fill="white" fill-opacity="0.20" stroke="#bbb" stroke-width="1.2"/>
+  <rect x="${pad}" y="${pad}" width="${boxW}" height="${boxH}" rx="7" fill="white" fill-opacity="0.50" stroke="#bbb" stroke-width="1.2"/>
   <text x="${pad+pad}" y="${pad+pad+17}" font-size="17" font-weight="bold" fill="#111" font-family="Arial,sans-serif">Duxbury Bay — Public Access Points</text>
-  <text x="${pad+pad}" y="${pad+pad+34}" font-size="12" fill="#555" font-family="Arial,sans-serif">${TOWN_LANDINGS.length} Town Landings · ${WAYS_TO_WATER.length} Ways to the Water  |  Click a marker to open site details</text>
+  <text x="${pad+pad}" y="${pad+pad+34}" font-size="12" fill="#555" font-family="Arial,sans-serif">Red: formally designated public landings  ·  Blue: public rights-of-way to the shoreline  |  Click a marker for details</text>
   <g transform="translate(${pad+pad},${pad})" font-family="Arial,sans-serif">${rows}</g>`;
 }
 
