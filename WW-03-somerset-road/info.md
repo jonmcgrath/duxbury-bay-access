@@ -3,7 +3,7 @@
 **Category:** Way to the Water
 **ID:** WW-03
 **Address:** Somerset Road, Duxbury MA
-**Coordinates:** 42.049, -70.677 *(approximate)*
+**Coordinates:** 42.009834, -70.668812
 
 ## Parking
 Unknown

@@ -3,7 +3,7 @@
 **Category:** Town Landing
 **ID:** 05
 **Address:** Powder Point Ave, Duxbury MA
-**Coordinates:** 42.0483, -70.6479
+**Coordinates:** 42.046877, -70.650666
 
 ## Parking
 Limited

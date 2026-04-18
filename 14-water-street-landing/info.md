@@ -3,13 +3,13 @@
 **Category:** Town Landing
 **ID:** 14
 **Address:** Water Street, South Duxbury MA
-**Coordinates:** 42.0329, -70.6717
+**Coordinates:** 42.032735, -70.670491
 
 ## Parking
 Unknown
 
 ## Notes
-Deep Water Anchorage; seasonal recreational access; Old Shipbuilders Historic District
+Deep water anchorage; seasonal recreational access; Old Shipbuilders Historic District
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

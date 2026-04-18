@@ -3,13 +3,13 @@
 **Category:** Town Landing
 **ID:** 07
 **Address:** 10 Anchorage Lane, Duxbury MA
-**Coordinates:** 42.0466, -70.6749
+**Coordinates:** 42.0473, -70.67413
 
 ## Parking
-Limited; Viewing and Fishing
+Limited — viewing and fishing
 
 ## Notes
-170 George St area; 27.4-acre Cushman Preserve borders Bluefish River; easy flat trails; Wildlands Trust
+Cushman Preserve (27.4 acres) borders Bluefish River. Easy flat trails. Wildlands Trust property.
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

@@ -3,7 +3,7 @@
 **Category:** Town Landing
 **ID:** 01
 **Address:** Ocean Road North, Duxbury MA
-**Coordinates:** 42.0631, -70.6484
+**Coordinates:** 42.062107, -70.64765
 
 ## Parking
 Unknown

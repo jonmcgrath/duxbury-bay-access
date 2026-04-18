@@ -11,39 +11,9 @@ const sharp = require('sharp');
 const fs = require('fs');
 
 // ─── SITE DATA ────────────────────────────────────────────────────────────────
-
-const TOWN_LANDINGS = [
-  { id: '01', label: '1',  name: 'Ford Stand Landing',             lat: 42.0631, lng: -70.6484 },
-  { id: '02', label: '2',  name: 'Old Cove Landing',               lat: 42.0512, lng: -70.6717 },
-  { id: '03', label: '3',  name: 'Drew Salt Works Landing',        lat: 42.0512, lng: -70.6689 },
-  { id: '04', label: '4',  name: 'Shipyard Lane (Ellison Beach)',  lat: 42.0274, lng: -70.6714 },
-  { id: '05', label: '5',  name: 'Powder Point Landing',           lat: 42.0483, lng: -70.6479 },
-  { id: '06', label: '6',  name: 'Powder Point Bridge (W. End)',   lat: 42.0483, lng: -70.6490 }, // offset slightly
-  { id: '07', label: '7',  name: 'Anchorage Lane Landing',         lat: 42.0466, lng: -70.6749 },
-  { id: '08', label: '8',  name: 'Bluefish River Landing',         lat: 42.0448, lng: -70.6744 },
-  { id: '09', label: '9',  name: 'Sagamore Road Landing',          lat: 42.0094, lng: -70.6705 },
-  { id: '10', label: '10', name: 'Mattakeeset Town Pier',          lat: 42.0393, lng: -70.6703 },
-  { id: '11', label: '11', name: 'Winsor Street Landing',          lat: 42.0349, lng: -70.6712 },
-  { id: '12', label: '12', name: 'Jocelyn Lane Landing',           lat: 42.0200, lng: -70.6770, approx: true },
-  { id: '13', label: '13', name: 'Massasoit Road Landing',         lat: 42.0089, lng: -70.6720 },
-  { id: '14', label: '14', name: 'Water Street Landing',           lat: 42.0329, lng: -70.6717 },
-  { id: '15', label: '15', name: 'Harden Hill Road Landing',       lat: 42.0235, lng: -70.6787 },
-  { id: '16', label: '16', name: 'Elderberry Lane',                lat: 42.0190, lng: -70.6843 },
-  { id: '17', label: '17', name: 'Bay Farm',                       lat: 42.0030, lng: -70.7130 },
-  { id: '18', label: '18', name: 'Hicks Point Road Landing',       lat: 42.0089, lng: -70.7101 },
-  { id: '19', label: '19', name: 'Miles Standish Home Site',       lat: 42.0139, lng: -70.6822 },
-  { id: '20', label: '20', name: "Howland's Landing",              lat: 42.0102, lng: -70.6848 },
-  { id: '21', label: '21', name: 'Landing Road Beach',             lat: 42.0133, lng: -70.7010 },
-  { id: '22', label: '22', name: 'Island Creek Pond',              lat: 42.0281, lng: -70.7112 },
-];
-
-const WAYS_TO_WATER = [
-  { id: 'WW-01', label: 'W1', name: "Simeon Soule's Landing", lat: 42.0350, lng: -70.6590, approx: true },
-  { id: 'WW-02', label: 'W2', name: 'Elder Brewster Road',    lat: 42.0108, lng: -70.6703 },
-  { id: 'WW-03', label: 'W3', name: 'Somerset Road',          lat: 42.0490, lng: -70.6770, approx: true },
-  { id: 'WW-04', label: 'W4', name: "Peterson's Landing",     lat: 42.0487, lng: -70.6785 },
-  { id: 'WW-05', label: 'W5', name: 'Longview Road',          lat: 42.0155, lng: -70.6860, approx: true },
-];
+const ALL_SITES     = require('./sites.json');
+const TOWN_LANDINGS = ALL_SITES.filter(s => s.category === 'town-landing');
+const WAYS_TO_WATER = ALL_SITES.filter(s => s.category === 'way-to-water');
 
 // ─── MAP SETTINGS ─────────────────────────────────────────────────────────────
 // Zoom 14, cropped east just past Clark's Island (~-70.636)

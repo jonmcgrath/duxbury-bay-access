@@ -3,13 +3,13 @@
 **Category:** Town Landing
 **ID:** 19
 **Address:** Myles Standish Monument area, Duxbury MA
-**Coordinates:** 42.0139, -70.6822
+**Coordinates:** 42.007374, -70.674518
 
 ## Parking
 Unknown
 
 ## Notes
-Historic site; Myles Standish Monument nearby on Shantum Lane
+Historic site; Myles Standish Monument on Shantum Lane
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

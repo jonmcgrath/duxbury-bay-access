@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "node generate-maps.js && node generate-all-sites-map.js && node generate-html.js && node generate-editor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

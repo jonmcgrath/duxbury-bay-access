@@ -2,14 +2,14 @@
 
 **Category:** Way to the Water
 **ID:** WW-02
-**Address:** Elder Brewster Road, South Duxbury MA
-**Coordinates:** 42.0108, -70.6703
+**Address:** Elder Brewster Road, South Duxbury
+**Coordinates:** 42.010493, -70.668396
 
 ## Parking
-12 spaces; Town-Restricted
+12 spaces · Town-Restricted
 
 ## Notes
-Town-Restricted Parking; 12 spaces
+Town-restricted parking; 12 spaces
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

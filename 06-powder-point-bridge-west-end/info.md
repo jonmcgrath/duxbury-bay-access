@@ -3,13 +3,13 @@
 **Category:** Town Landing
 **ID:** 06
 **Address:** 370 Powder Point Ave, Duxbury MA
-**Coordinates:** 42.0483, -70.6479
+**Coordinates:** 42.046791, -70.650607
 
 ## Parking
-50 spaces, 0 trailers, 2 handicapped
+50 spaces · 0 trailers · 2 handicapped
 
 ## Notes
-Major access hub; kayak/paddleboard/rowing shell launch; CLOSED Dec 2025–April 2026 for repairs; ADA accessible; seasonal porta-potties
+Major access hub. Kayak/paddleboard/rowing shell launch. ADA accessible. Seasonal porta-potties. CLOSED Dec 2025–April 2026 for bridge repairs.
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

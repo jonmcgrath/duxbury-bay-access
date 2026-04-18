@@ -3,7 +3,7 @@
 **Category:** Town Landing
 **ID:** 02
 **Address:** 75 Cove Street, Duxbury MA
-**Coordinates:** 42.0512, -70.6717
+**Coordinates:** 42.051771, -70.671464
 
 ## Parking
 Very limited (lower tides only)

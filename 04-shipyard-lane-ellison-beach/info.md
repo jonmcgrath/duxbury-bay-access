@@ -3,13 +3,13 @@
 **Category:** Town Landing
 **ID:** 04
 **Address:** 99 Shipyard Lane, Duxbury MA
-**Coordinates:** 42.0274, -70.6714
+**Coordinates:** 42.027481, -70.671413
 
 ## Parking
-27 cars, 0 trailers, 2 handicapped; sticker required Memorial Day–Labor Day
+27 cars · 0 trailers · 2 handicapped
 
 ## Notes
-1.2-acre sandy beach named after Eben Ellison; seasonal lifeguards; floating dock; calm water protected by breakwater
+1.2-acre sandy beach (Eben Ellison). Seasonal lifeguards, floating dock, calm water protected by breakwater. Sticker required Memorial Day–Labor Day.
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

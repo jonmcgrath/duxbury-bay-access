@@ -2,14 +2,14 @@
 
 **Category:** Way to the Water
 **ID:** WW-01
-**Address:** Duxbury MA (near Powder Point area)
-**Coordinates:** 42.035, -70.659 *(approximate)*
+**Address:** Duxbury MA (near Powder Point)
+**Coordinates:** 42.0501, -70.663704
 
 ## Parking
-12 spaces; Town-Restricted
+12 spaces · Town-Restricted
 
 ## Notes
-Town-Restricted Parking; location approximate
+Town-restricted parking; location approximate
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

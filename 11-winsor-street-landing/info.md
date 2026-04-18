@@ -3,7 +3,7 @@
 **Category:** Town Landing
 **ID:** 11
 **Address:** Winsor Street, South Duxbury MA
-**Coordinates:** 42.0349, -70.6712
+**Coordinates:** 42.034788, -70.669763
 
 ## Parking
 Unknown

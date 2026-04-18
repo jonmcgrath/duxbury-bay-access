@@ -3,7 +3,7 @@
 **Category:** Way to the Water
 **ID:** WW-05
 **Address:** Longview Road, Duxbury MA
-**Coordinates:** 42.0155, -70.686 *(approximate)*
+**Coordinates:** 42.017474, -70.685611
 
 ## Parking
 Unknown

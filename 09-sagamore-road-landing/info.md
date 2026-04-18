@@ -3,13 +3,13 @@
 **Category:** Town Landing
 **ID:** 09
 **Address:** Sagamore Road, Duxbury MA
-**Coordinates:** 42.0094, -70.6705
+**Coordinates:** 42.009201, -70.669567
 
 ## Parking
 0 spaces (minimal)
 
 ## Notes
-Minimal parking; informal access
+Minimal parking; informal shoreline access
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red

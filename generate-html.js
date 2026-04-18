@@ -10,45 +10,13 @@
 const fs   = require('fs');
 const path = require('path');
 
-// ─── SITE DATA (mirrors generate-all-sites-map.js) ────────────────────────────
-
-const TOWN_LANDINGS = [
-  { id:'01', label:'1',  slug:'ford-stand-landing',             name:'Ford Stand Landing',            lat:42.0631, lng:-70.6484, address:'Ocean Road North, Duxbury MA',            parking:'Unknown', notes:'Northern-most landing; Highway Extension access' },
-  { id:'02', label:'2',  slug:'old-cove-landing',               name:'Old Cove Landing',              lat:42.0512, lng:-70.6717, address:'75 Cove Street, Duxbury MA',              parking:'Very limited (lower tides only)', notes:'Access to Duck Hill River and Duxbury Back River; no boat ramp; no ADA' },
-  { id:'03', label:'3',  slug:'drew-salt-works-landing',        name:'Drew Salt Works Landing',       lat:42.0512, lng:-70.6689, address:'Bay Pond Road, Duxbury MA',               parking:'Unknown', notes:'Historical salt works site; Bay Road North area' },
-  { id:'04', label:'4',  slug:'shipyard-lane-ellison-beach',    name:'Shipyard Lane (Ellison Beach)', lat:42.0274, lng:-70.6714, address:'99 Shipyard Lane, Duxbury MA',            parking:'27 cars · 0 trailers · 2 handicapped', notes:'1.2-acre sandy beach (Eben Ellison). Seasonal lifeguards, floating dock, calm water protected by breakwater. Sticker required Memorial Day–Labor Day.' },
-  { id:'05', label:'5',  slug:'powder-point-landing',           name:'Powder Point Landing',          lat:42.0483, lng:-70.6479, address:'Powder Point Ave, Duxbury MA',            parking:'Limited', notes:'Near Powder Point Bridge; paddle/small boat access to bay' },
-  { id:'06', label:'6',  slug:'powder-point-bridge-west-end',   name:'Powder Point Bridge (W. End)',  lat:42.0483, lng:-70.6490, address:'370 Powder Point Ave, Duxbury MA',        parking:'50 spaces · 0 trailers · 2 handicapped', notes:'Major access hub. Kayak/paddleboard/rowing shell launch. ADA accessible. Seasonal porta-potties. ⚠️ CLOSED Dec 2025–April 2026 for bridge repairs.' },
-  { id:'07', label:'7',  slug:'anchorage-lane-landing',         name:'Anchorage Lane Landing',        lat:42.0466, lng:-70.6749, address:'10 Anchorage Lane, Duxbury MA',           parking:'Limited — viewing and fishing', notes:'Cushman Preserve (27.4 acres) borders Bluefish River. Easy flat trails. Wildlands Trust property.' },
-  { id:'08', label:'8',  slug:'bluefish-river-landing',         name:'Bluefish River Landing',        lat:42.0448, lng:-70.6744, address:'Bluefish River area, Duxbury MA',         parking:'Minimal', notes:'Old Mill Dam / Salt Mill area; tidal river access' },
-  { id:'09', label:'9',  slug:'sagamore-road-landing',          name:'Sagamore Road Landing',         lat:42.0094, lng:-70.6705, address:'Sagamore Road, Duxbury MA',               parking:'0 spaces (minimal)', notes:'Minimal parking; informal shoreline access' },
-  { id:'10', label:'10', slug:'mattakeeset-town-pier',          name:'Mattakeeset Town Pier',         lat:42.0393, lng:-70.6703, address:'35 Mattakeeset Court, Duxbury MA',        parking:'60 cars · 12 trailers · 4 handicapped', notes:'Primary hub. Public boat launch ramp. ADA accessible. Seasonal restrooms, benches, trash. Snug Harbor between Duxbury Yacht Club and DBMS. Dawn to dusk. Harbormaster: (781) 934-2866.' },
-  { id:'11', label:'11', slug:'winsor-street-landing',          name:'Winsor Street Landing',         lat:42.0349, lng:-70.6712, address:'Winsor Street, South Duxbury MA',          parking:'Unknown', notes:'Seasonal recreational access; Old Shipbuilders Historic District' },
-  { id:'12', label:'12', slug:'jocelyn-lane-landing',           name:'Jocelyn Lane Landing',          lat:42.0200, lng:-70.6770, address:'Jocelyn Lane, Duxbury MA',                parking:'Unknown', notes:'Location approximate — not confirmed in mapping database', approx:true },
-  { id:'13', label:'13', slug:'massasoit-road-landing',         name:'Massasoit Road Landing',        lat:42.0089, lng:-70.6720, address:'Massasoit Road, Duxbury MA',              parking:'Unknown', notes:'Pine Grove; shoreline access' },
-  { id:'14', label:'14', slug:'water-street-landing',           name:'Water Street Landing',          lat:42.0329, lng:-70.6717, address:'Water Street, South Duxbury MA',          parking:'Unknown', notes:'Deep water anchorage; seasonal recreational access; Old Shipbuilders Historic District' },
-  { id:'15', label:'15', slug:'harden-hill-road-landing',       name:'Harden Hill Road Landing',      lat:42.0235, lng:-70.6787, address:'Harden Hill Road, South Duxbury MA',     parking:'Time-restricted parking only', notes:'Time-restricted parking' },
-  { id:'16', label:'16', slug:'elderberry-lane',                name:'Elderberry Lane',               lat:42.0190, lng:-70.6843, address:'Elderberry Lane, South Duxbury MA',      parking:'Unknown', notes:'0.7–1 acre parcel; southern shoreline access' },
-  { id:'17', label:'17', slug:'bay-farm',                       name:'Bay Farm',                      lat:42.0030, lng:-70.7130, address:'31 Loring Street, Duxbury/Kingston MA',   parking:'~25 spaces', notes:'80-acre conservation area on the Duxbury/Kingston town line. Sandy beach, tide pools, salt marshes, woodlands. Southern terminus of Bay Circuit Trail. Jointly owned by Duxbury, Kingston, and MA DEP.' },
-  { id:'18', label:'18', slug:'hicks-point-road-landing',       name:'Hicks Point Road Landing',      lat:42.0089, lng:-70.7101, address:'Hicks Point Road, Duxbury MA',           parking:'Unknown', notes:'Southern-designated landing; Miles Standish Park area' },
-  { id:'19', label:'19', slug:'miles-standish-home-site',       name:'Miles Standish Home Site',      lat:42.0139, lng:-70.6822, address:'Myles Standish Monument area, Duxbury MA', parking:'Unknown', notes:'Historic site; Myles Standish Monument on Shantum Lane' },
-  { id:'20', label:'20', slug:'howlands-landing',               name:"Howland's Landing",             lat:42.0102, lng:-70.6848, address:'23 Howland Landing, Duxbury MA',         parking:'18 cars · 3 trailers · 0 handicapped (free)', notes:'Deep water. 5-acre park on Kingston Bay. Historic shipbuilding heritage. Amphitheater, picnic tables, interpretive signage. Dawn to dusk.' },
-  { id:'21', label:'21', slug:'landing-road-beach',             name:'Landing Road Beach',            lat:42.0133, lng:-70.7010, address:'44 Landing Road, Duxbury MA',             parking:'None', notes:'Kingston Bay; no parking on-site. Benches, informational signage. Historic property granted to Thomas Prence in 1627.' },
-  { id:'22', label:'22', slug:'island-creek-pond',              name:'Island Creek Pond',             lat:42.0281, lng:-70.7112, address:'287 Tobey Garden Street, Duxbury MA',    parking:'Large lot — free', notes:'Freshwater Great Pond (43-acre Crocker Memorial Park). Canoe/kayak launch from shore. Herring migration history and Native American heritage. Dawn to dusk.' },
-];
-
-const WAYS_TO_WATER = [
-  { id:'WW-01', label:'W1', slug:'simeon-soules-landing',   name:"Simeon Soule's Landing", lat:42.0350, lng:-70.6590, address:'Duxbury MA (near Powder Point)',   parking:'12 spaces · Town-Restricted', notes:'Town-restricted parking; location approximate', approx:true },
-  { id:'WW-02', label:'W2', slug:'elder-brewster-road',     name:'Elder Brewster Road',    lat:42.0108, lng:-70.6703, address:'Elder Brewster Road, South Duxbury', parking:'12 spaces · Town-Restricted', notes:'Town-restricted parking; 12 spaces' },
-  { id:'WW-03', label:'W3', slug:'somerset-road',           name:'Somerset Road',          lat:42.0490, lng:-70.6770, address:'Somerset Road, Duxbury MA',          parking:'Unknown', notes:'Boatslip access; location approximate', approx:true },
-  { id:'WW-04', label:'W4', slug:'petersons-landing',       name:"Peterson's Landing",     lat:42.0487, lng:-70.6785, address:'78 George Street, Duxbury MA',       parking:'Unknown', notes:'Public waterway; 78 George Street (Saint George Street)' },
-  { id:'WW-05', label:'W5', slug:'longview-road',           name:'Longview Road',          lat:42.0155, lng:-70.6860, address:'Longview Road, Duxbury MA',          parking:'Unknown', notes:'Location approximate', approx:true },
-];
-
-const ALL_SITES = [
-  ...TOWN_LANDINGS.map(s => ({ ...s, category:'town-landing', color:'#C0392B' })),
-  ...WAYS_TO_WATER.map(s => ({ ...s, category:'way-to-water', color:'#1A6FA8' })),
-];
+// ─── SITE DATA ────────────────────────────────────────────────────────────────
+const ALL_SITES     = require('./sites.json').map(s => ({
+  ...s,
+  color: s.category === 'town-landing' ? '#C0392B' : '#1A6FA8',
+}));
+const TOWN_LANDINGS = ALL_SITES.filter(s => s.category === 'town-landing');
+const WAYS_TO_WATER = ALL_SITES.filter(s => s.category === 'way-to-water');
 
 // ─── MAP PROJECTION (same as generate-all-sites-map.js) ───────────────────────
 
@@ -75,27 +43,46 @@ function legendSVG() {
   const col1 = TOWN_LANDINGS.slice(0, 11);
   const col2 = TOWN_LANDINGS.slice(11);
 
-  const rowItem = (x, y, color, label, text, approx) => `
-    <circle cx="${x+ldotR}" cy="${y+ldotR-1}" r="${ldotR}" fill="${color}"/>
-    <text x="${x+ldotR}" y="${y+ldotR-1}" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif">${label}</text>
+  const rowItem = (x, y, color, label, text, approx, href) => `
+    <a href="${href}" class="marker-link">
+      <circle cx="${x+ldotR}" cy="${y+ldotR-1}" r="${ldotR}" fill="${color}" class="dot"/>
+      <text x="${x+ldotR}" y="${y+ldotR-1}" text-anchor="middle" dominant-baseline="central" font-size="8" font-weight="bold" fill="white" font-family="Arial,sans-serif" class="lbl">${label}</text>
+    </a>
     <text x="${x+ldotR*2+5}" y="${y+ldotR+4}" font-size="${fsize}" fill="#111" font-family="Arial,sans-serif">${text}${approx?' *':''}</text>`;
 
   let rows = '';
   let hY = pad+17+17+12;
   rows += `<text x="${pad}" y="${hY}" font-size="${hsize}" font-weight="bold" fill="#C0392B" font-family="Arial,sans-serif" letter-spacing="0.5">TOWN LANDINGS</text>`;
   let rY = hY+lineH*0.85;
-  let yC1=rY; for(const s of col1){ rows+=rowItem(pad,yC1,'#C0392B',s.label,`${s.id}. ${s.name}`,s.approx); yC1+=lineH; }
-  let yC2=rY; for(const s of col2){ rows+=rowItem(col2X,yC2,'#C0392B',s.label,`${s.id}. ${s.name}`,s.approx); yC2+=lineH; }
+  let yC1=rY; for(const s of col1){ rows+=rowItem(pad,yC1,'#C0392B',s.label,`${s.id}. ${s.name}`,s.approx,`${s.id}-${s.slug}/index.html`); yC1+=lineH; }
+  let yC2=rY; for(const s of col2){ rows+=rowItem(col2X,yC2,'#C0392B',s.label,`${s.id}. ${s.name}`,s.approx,`${s.id}-${s.slug}/index.html`); yC2+=lineH; }
 
   const wwHY = Math.max(yC1,yC2)+lineH*0.4;
   rows += `<text x="${pad}" y="${wwHY}" font-size="${hsize}" font-weight="bold" fill="#1A6FA8" font-family="Arial,sans-serif" letter-spacing="0.5">WAYS TO THE WATER</text>`;
   let wY=wwHY+lineH*0.85;
-  for(const s of WAYS_TO_WATER){ rows+=rowItem(pad,wY,'#1A6FA8',s.label,`${s.id}. ${s.name}`,s.approx); wY+=lineH; }
+  for(const s of WAYS_TO_WATER){ rows+=rowItem(pad,wY,'#1A6FA8',s.label,`${s.id}. ${s.name}`,s.approx,`${s.id}-${s.slug}/index.html`); wY+=lineH; }
 
   const noteY=wY+lineH*0.4;
   rows += `<text x="${pad}" y="${noteY}" font-size="11" fill="#888" font-family="Arial,sans-serif">* Location approximate — verify against Chapter 7</text>`;
 
-  const boxW=col2X+320, boxH=noteY+12;
+  const boxW=col2X+320;
+  // Links float to the right of the Ways to the Water items
+  const wwMid = wwHY + lineH*0.85 + (WAYS_TO_WATER.length * lineH) / 2;
+  const rpLeft = col2X + 4;
+  const rpWidth = (boxW - pad) - rpLeft - 8;  // boxW-pad = box right edge in g-coords
+  const linkX = rpLeft + rpWidth / 2;
+  const gisY = wwMid - 14;
+  const concomY = wwMid + 14;
+  rows += `
+  <rect x="${rpLeft}" y="${gisY-20}" width="${rpWidth}" height="${concomY-gisY+36}" rx="4" fill="white" fill-opacity="0.42"/>
+  <a href="https://www.axisgis.com/DuxburyMA/" target="_blank" class="legend-link">
+    <text x="${linkX}" y="${gisY}" font-size="15" fill="#1A6FA8" font-family="Arial,sans-serif" text-anchor="middle" text-decoration="underline">→ Duxbury GIS Map</text>
+  </a>
+  <a href="https://www.town.duxbury.ma.us/sites/g/files/vyhlif10506/f/pages/scan_of_2009_conservation_land_and_other_points_of_interest.pdf" target="_blank" class="legend-link">
+    <text x="${linkX}" y="${concomY}" font-size="15" fill="#1A6FA8" font-family="Arial,sans-serif" text-anchor="middle" text-decoration="underline">→ Duxbury concom site</text>
+  </a>`;
+
+  const boxH=noteY+12;
   return `
   <rect x="${pad}" y="${pad}" width="${boxW}" height="${boxH}" rx="7" fill="white" fill-opacity="0.50" stroke="#bbb" stroke-width="1.2"/>
   <text x="${pad+pad}" y="${pad+pad+17}" font-size="17" font-weight="bold" fill="#111" font-family="Arial,sans-serif">Duxbury Bay — Public Access Points</text>
@@ -149,6 +136,8 @@ function generateMapHTML() {
     .marker-link:hover .lbl { font-size: 13px; }
     .marker-link:focus { outline: none; }
     .marker-link:focus .dot { stroke: white; stroke-width: 2; }
+    .legend-link { pointer-events: all; cursor: pointer; }
+    .legend-link:hover text { filter: brightness(1.3); }
     footer {
       text-align: center; padding: 12px; color: #667;
       font-size: 12px;
@@ -373,7 +362,10 @@ function generateSiteHTML(site, prev, next) {
       <dt>Address</dt>
       <dd>${site.address}</dd>
       <dt>Coordinates</dt>
-      <dd>${site.lat}, ${site.lng}${site.approx ? ' (approx.)' : ''}</dd>
+      <dd>${site.lat}, ${site.lng}${site.approx ? ' (approx.)' : ''}
+        &nbsp;<a href="https://www.google.com/maps?q=${site.lat},${site.lng}&ll=${site.lat},${site.lng}&z=18"
+           target="_blank" rel="noopener" style="font-size:12px;color:#1a6fa8;">Verify on Google Maps ↗</a>
+      </dd>
       <dt>Category</dt>
       <dd>${catLabel}</dd>
     </dl>

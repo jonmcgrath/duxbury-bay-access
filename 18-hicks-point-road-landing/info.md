@@ -3,7 +3,7 @@
 **Category:** Town Landing
 **ID:** 18
 **Address:** Hicks Point Road, Duxbury MA
-**Coordinates:** 42.0089, -70.7101
+**Coordinates:** 42.006984, -70.70879
 
 ## Parking
 Unknown

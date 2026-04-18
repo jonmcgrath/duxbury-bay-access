@@ -3,7 +3,7 @@
 **Category:** Town Landing
 **ID:** 08
 **Address:** Bluefish River area, Duxbury MA
-**Coordinates:** 42.0448, -70.6744
+**Coordinates:** 42.046066, -70.671633
 
 ## Parking
 Minimal

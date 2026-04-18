@@ -3,7 +3,7 @@
 **Category:** Town Landing
 **ID:** 03
 **Address:** Bay Pond Road, Duxbury MA
-**Coordinates:** 42.0512, -70.6689
+**Coordinates:** 42.051073, -70.668904
 
 ## Parking
 Unknown

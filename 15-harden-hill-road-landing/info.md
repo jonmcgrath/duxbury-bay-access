@@ -3,13 +3,13 @@
 **Category:** Town Landing
 **ID:** 15
 **Address:** Harden Hill Road, South Duxbury MA
-**Coordinates:** 42.0235, -70.6787
+**Coordinates:** 42.023243, -70.67473
 
 ## Parking
-Time-restricted parking
+Time-restricted parking only
 
 ## Notes
-Time-restricted parking only
+Time-restricted parking
 
 ## Maps
 - `overview.png` — Full Duxbury Bay area, site marked in red
