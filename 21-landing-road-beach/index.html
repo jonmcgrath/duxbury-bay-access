@@ -73,6 +73,58 @@
     .map-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .map-pair figure { margin: 0; }
     .map-pair figcaption { font-size: 13px; color: #666; margin-top: 6px; text-align: center; }
+    .map-pair figcaption a { color: #C0392B; }
+
+    /* ── Scroll-to-zoom overview image ── */
+    .zoom-container {
+      display: block; position: relative; overflow: hidden;
+      border-radius: 6px; border: 1px solid #e0e0e0; cursor: zoom-in;
+      background: #eee;
+    }
+    .zoom-content {
+      position: relative; transform-origin: 0 0; will-change: transform;
+    }
+    .zoom-content.settling { transition: transform 0.25s ease-out; }
+    .zoom-content img {
+      display: block; width: 100%; height: auto; border: none; border-radius: 0;
+    }
+    .map-marker {
+      position: absolute; width: 12px; height: 12px; margin: -6px 0 0 -6px;
+      border-radius: 50%; background: #CC0000; border: 2px solid white;
+      box-shadow: 0 0 3px rgba(0,0,0,0.7);
+      transform-origin: center center; will-change: transform;
+      pointer-events: none;
+    }
+    .zoom-content.settling .map-marker { transition: transform 0.25s ease-out; }
+
+    /* ── Overview lightbox ── */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.85);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox .zoom-container {
+      width: min(94vw, 1400px); aspect-ratio: 4 / 3; max-height: 92vh;
+      border: none; background: #111;
+    }
+    .lightbox-close {
+      position: absolute; top: 18px; right: 24px;
+      background: rgba(255,255,255,0.15); color: white; border: none;
+      width: 40px; height: 40px; border-radius: 50%; font-size: 22px;
+      cursor: pointer; line-height: 1;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-hint {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.7); font-size: 12px;
+    }
+
+    /* ── Embedded GIS map ── */
+    .gis-embed {
+      display: block; width: 100%; height: 400px; border: 1px solid #e0e0e0;
+      border-radius: 6px;
+    }
 
     /* ── Site navigation bar ── */
     .sitenav {
@@ -144,19 +196,31 @@
     <h2>Maps</h2>
     <div class="map-pair">
       <figure>
-        <a href="overview.png" target="_blank">
-          <img src="overview.png" alt="Overview map — Landing Road Beach">
-        </a>
-        <figcaption>Overview — full Duxbury Bay context (click to enlarge)</figcaption>
+        <div class="zoom-container zoom-thumb" tabindex="0" role="button" aria-label="Open full-size overview map">
+          <div class="zoom-content">
+            <img src="overview.png" alt="Overview map — Landing Road Beach">
+            <span class="map-marker" style="left:41.81%; top:69.60%;"></span>
+          </div>
+        </div>
+        <figcaption>Overview — full Duxbury Bay context (scroll to zoom, click to enlarge)</figcaption>
       </figure>
       <figure>
-        <a href="detail.png" target="_blank">
-          <img src="detail.png" alt="Detail map — Landing Road Beach">
-        </a>
-        <figcaption>Close-up — site location detail (click to enlarge)</figcaption>
+        <iframe class="gis-embed" src="https://www.axisgis.com/DuxburyMA/" loading="lazy" title="Duxbury GIS map"></iframe>
+        <figcaption>Duxbury GIS — search or zoom to 44 Landing Road, Duxbury MA for parcel-level detail (<a href="https://www.axisgis.com/DuxburyMA/" target="_blank" rel="noopener">open full site ↗</a>)</figcaption>
       </figure>
     </div>
   </section>
+
+  <div class="lightbox" id="overview-lightbox">
+    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="zoom-container">
+      <div class="zoom-content">
+        <img src="overview.png" alt="Overview map — Landing Road Beach (full size)">
+        <span class="map-marker" style="left:41.81%; top:69.60%;"></span>
+      </div>
+    </div>
+    <div class="lightbox-hint">Scroll to zoom &nbsp;·&nbsp; Esc or click outside to close</div>
+  </div>
 
   <!-- ── Parking ── -->
   <section id="parking">
@@ -203,6 +267,93 @@
   <a href="../all-sites-map.html" class="sitenav-home">&#8962; All Sites Map</a>
   <a href="../22-island-creek-pond/index.html" class="sitenav-btn">&#8594; 22. Island Creek Pond</a>
 </div>
+
+<script>
+  // Normalize wheel delta across deltaMode (0=pixel, 1=line, 2=page) so zoom
+  // speed stays consistent regardless of OS/mouse "lines per scroll" settings —
+  // some mice report line-mode deltas as small as ±3, others report pixel-mode ~100.
+  function normalizedDeltaY(e) {
+    if (e.deltaMode === 1) return e.deltaY * 16;
+    if (e.deltaMode === 2) return e.deltaY * window.innerHeight;
+    return e.deltaY;
+  }
+
+  function attachZoomBehavior(container) {
+    var content = container.querySelector('.zoom-content');
+    var marker = container.querySelector('.map-marker');
+    var scale = 1, tx = 0, ty = 0;
+    var MIN = 1, MAX = 10, STEP = 0.003;
+
+    function render() {
+      content.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+      if (marker) marker.style.transform = 'scale(' + (1 / scale) + ')';
+    }
+
+    function reset(withTransition) {
+      content.classList.toggle('settling', !!withTransition);
+      scale = 1; tx = 0; ty = 0;
+      render();
+    }
+
+    container.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      content.classList.remove('settling');
+
+      var rect = container.getBoundingClientRect();
+      var mx = e.clientX - rect.left;
+      var my = e.clientY - rect.top;
+      var dy = normalizedDeltaY(e);
+
+      var newScale = Math.min(MAX, Math.max(MIN, scale * Math.exp(-dy * STEP)));
+      // Keep the point under the cursor fixed on screen as scale changes.
+      var cx = (mx - tx) / scale;
+      var cy = (my - ty) / scale;
+      tx = mx - cx * newScale;
+      ty = my - cy * newScale;
+      scale = newScale;
+
+      // Clamp so the zoomed image always fully covers the container (no blank edges).
+      tx = Math.min(0, Math.max(rect.width - rect.width * scale, tx));
+      ty = Math.min(0, Math.max(rect.height - rect.height * scale, ty));
+
+      render();
+    }, { passive: false });
+
+    container.addEventListener('mouseleave', function () { reset(true); });
+
+    return { reset: reset };
+  }
+
+  document.querySelectorAll('.zoom-thumb').forEach(attachZoomBehavior);
+
+  var lightbox = document.getElementById('overview-lightbox');
+  if (lightbox) {
+    var thumb = document.querySelector('.zoom-thumb');
+    var stage = attachZoomBehavior(lightbox.querySelector('.zoom-container'));
+
+    function openLightbox() {
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      stage.reset(false);
+    }
+
+    thumb.addEventListener('click', openLightbox);
+    thumb.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); }
+    });
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  }
+</script>
 
 </body>
 </html>

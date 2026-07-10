@@ -23,22 +23,24 @@ async function renderMap(options) {
   const { center, zoom, width, height, marker, outputPath } = options;
   const map = new StaticMaps({ width, height });
 
-  // White outline ring for visibility against any background
-  map.addCircle({
-    coord: [marker.lng, marker.lat],
-    radius: marker.radius + 30,
-    fill: false,
-    color: '#FFFFFF',
-    width: 4,
-  });
-  // Red filled marker
-  map.addCircle({
-    coord: [marker.lng, marker.lat],
-    radius: marker.radius,
-    fill: true,
-    color: '#CC0000DD',
-    width: 3,
-  });
+  if (marker) {
+    // White outline ring for visibility against any background
+    map.addCircle({
+      coord: [marker.lng, marker.lat],
+      radius: marker.radius + 30,
+      fill: false,
+      color: '#FFFFFF',
+      width: 4,
+    });
+    // Red filled marker
+    map.addCircle({
+      coord: [marker.lng, marker.lat],
+      radius: marker.radius,
+      fill: true,
+      color: '#CC0000DD',
+      width: 3,
+    });
+  }
 
   await map.render([center.lng, center.lat], zoom);
   await map.image.save(outputPath);
@@ -93,7 +95,7 @@ async function main() {
         zoom: BAY_ZOOM,
         width: 1200,
         height: 900,
-        marker: { lat: site.lat, lng: site.lng, radius: 400 },
+        marker: null, // marker is now a scalable HTML/CSS overlay (see generate-html.js)
         outputPath: path.join(folderPath, 'overview.png'),
       });
       console.log(`  ✓ overview.png`);
