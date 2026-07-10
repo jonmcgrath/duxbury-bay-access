@@ -129,6 +129,13 @@ function generateMapHTML() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Duxbury Bay — Public Access Points</title>
+  <link rel="icon" href="app-icon/dbmc-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="app-icon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="app-icon/dbmc-icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="app-icon/dbmc-icon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="app-icon/dbmc-icon-180.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a2634">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #1a2634; font-family: Arial, Helvetica, sans-serif; }
@@ -214,6 +221,13 @@ function generateSiteHTML(site, prev, next) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${site.id}. ${site.name} — Duxbury Bay</title>
+  <link rel="icon" href="../app-icon/dbmc-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="../app-icon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../app-icon/dbmc-icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../app-icon/dbmc-icon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../app-icon/dbmc-icon-180.png">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="${accent}">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #222; }
