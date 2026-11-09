@@ -219,14 +219,18 @@ function historySectionHTML(site) {
   </section>`;
   }
   const usedSources = new Set();
-  const items = recs.map(r => {
+  // Oldest first; records without a year ("Date unknown") go last.
+  const year = r => { const m = String(r.date).match(/\d{4}/); return m ? +m[0] : 9999; };
+  const sorted = recs.slice().sort((a, b) => year(a) - year(b));
+  const items = sorted.map(r => {
     const src = HISTORY.sources[r.source];
     usedSources.add(r.source);
+    const label = src.pageLabel || 'p.';
     // A record cites scanned pages (images in the repo) or a web page.
     const links = r.pages
-      ? r.pages.map(p => `<a href="../${src.pagesDir}/p${p}.jpg" target="_blank" rel="noopener">p. ${p} ↗</a>`).join('')
+      ? r.pages.map(p => `<a href="../${src.pagesDir}/p${p}.jpg" target="_blank" rel="noopener">${label} ${p} ↗</a>`).join('')
       : `<a href="${escapeHTML(r.url)}" target="_blank" rel="noopener">View source ↗</a>`;
-    const where = r.pages ? `, p. ${r.pages.join(', ')}` : '';
+    const where = r.pages ? `, ${label} ${r.pages.join(', ')}` : '';
     return `<li>
         <span class="rec-date">${escapeHTML(r.date)}</span>${escapeHTML(r.title)}
         ${r.siteMatch === 'assumed' ? '<span class="rec-assumed" title="The link between this record and this modern site is assumed, not yet verified">site match assumed</span>' : ''}
@@ -237,7 +241,8 @@ function historySectionHTML(site) {
   }).join('\n      ');
   const sourceNotes = [...usedSources].map(k => {
     const s = HISTORY.sources[k];
-    return `<em>${escapeHTML(s.title)}</em>. ${escapeHTML(s.detail)} <a href="${s.url}" target="_blank" rel="noopener">${s.pagesDir ? "Full book" : "Source page"} ↗</a>`;
+    const link = s.url ? ` <a href="${s.url}" target="_blank" rel="noopener">${s.pagesDir ? "Full book" : "Source page"} ↗</a>` : '';
+    return `<em>${escapeHTML(s.title)}</em>. ${escapeHTML(s.detail)}${link}`;
   }).join('<br>');
   return `<section id="history">
     <h2>Historical Records</h2>

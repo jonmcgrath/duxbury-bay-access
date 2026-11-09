@@ -80,6 +80,7 @@ Source: Duxbury Bay Management Plan (2013), Chapter 7; overview sketch `unnamed 
 - **Shipyard Lane (WW-01):** Jon first wanted to keep it as a town landing, because the Ellison family gave it to the town. He then agreed that a gift fits the bylaw's way-to-the-water wording ("by gift, or otherwise"), and it was moved the same day. Evidence: the on-site plaque credits Eben Ellison's "generous gift of land and money" ([NSRWA listing](https://nsrwa.org/listing/shipyard-lane-beach), checked 2026-11-09). **Not yet found:** the deed or town-meeting vote accepting the gift, and its date.
 
 **Not in either bylaw list:** 05 Powder Point Landing (now 06), 20 Howland's Landing (now 15). The plan's §7.2(a) also counts "16 town landings, 10 ways to the water" but lists 15 landings, so one landing is unaccounted for. Howland's may be it (the NSRWA says the town bought it in 1894). *Unverified.*
+- **Update 2026-11-09:** the 1975 Town Landing Study Committee report (source of the §302 wording) lists **16** shore landings, Howland's among them, plus a **St. George Street (by Old Mill Pond)** landing that this project lacks. It records Howland's as accepted by town vote in **1896**, not bought in 1894. See `sources/town-landing-report-1975/FINDINGS.md`.
 
 ## Key Observations
 1. ~~The PDF is a scanned image~~ **Corrected 2026-11-09:** the Bay Management Plan PDF has a text layer (produced by Word 2010). Extract it with `pdftotext -layout`.

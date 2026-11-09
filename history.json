@@ -1,5 +1,5 @@
 {
-  "_about": "Historical records per site, keyed by site id from sites.json. Records cite either 'pages' (printed page numbers in the source; images live at {source.pagesDir}/p{page}.jpg) or a web 'url'. 'siteMatch' records whether the link between the old record and the modern site is verified or assumed. Full citations and verification notes: sources/duxbury-town-records-1642-1770/FINDINGS.md",
+  "_about": "Historical records per site, keyed by site id from sites.json. Records cite either 'pages' (printed page numbers in the source; images live at {source.pagesDir}/p{page}.jpg) or a web 'url'. 'siteMatch' records whether the link between the old record and the modern site is verified or assumed. Full citations and verification notes: sources/duxbury-town-records-1642-1770/FINDINGS.md and sources/town-landing-report-1975/FINDINGS.md",
   "sources": {
     "etheridge-1893": {
       "title": "Copy of the Old Records of the Town of Duxbury, Mass., from 1642 to 1770",
@@ -16,9 +16,334 @@
       "title": "Drew Archives: Grace Ellison Letter (DAL.SMS.360), finding aid",
       "detail": "Duxbury Rural & Historical Society archives (checked 2026-11-09). Ellison family background; does not mention Shipyard Lane.",
       "url": "https://drewarchives.org/finding-aids/small-collections/ellison-grace/"
+    },
+    "tlsc-1975": {
+      "title": "Report of the Duxbury Town Landing Study Committee, 1975",
+      "detail": "Typescript report to the Selectmen by Donald F. Corcoran, Robert Cooper and Robert S. Ramsay, appointed under Article 65 of the 1974 annual town meeting. It includes typed transcriptions of town report excerpts from 1894 to 1972. Those transcriptions are a secondary source, so check each one against the original Town Report. The page links go to pages of the scanned copy (scan page numbers, not the report's typed page numbers).",
+      "pagesDir": "sources/town-landing-report-1975/pages",
+      "pageLabel": "scan p."
     }
   },
   "records": {
+    "10": [
+      {
+        "date": "1908",
+        "title": "Committee on Town Landings: the Mattakeeset Court landing is \"of no practical value in its present condition\"",
+        "quote": "The \"Town Landing\" at Mattakeesett Court is of no practical value in its present condition. It should be properly laid out.",
+        "by": "Report of Committee on Town Landings, Town Report 1908 p. 43 (Alfred E. Green, Chairman)",
+        "source": "tlsc-1975",
+        "pages": [
+          62
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1916–1917",
+        "title": "Land exchange with Wallace C. Flagg gives the town 100 more feet of frontage; deeds passed by 1917",
+        "quote": "agreement has been made with Mr. Wallace C. Flagg for an exchange of land on Mattakeeset Court giving the Town one hundred (100) feet more frontage on the Court.",
+        "by": "Selectmen's Reports 1916 and 1917 p. 5; Town Meeting March 11, 1916 p. 88 ($400 appropriated). Deed book and page not given",
+        "source": "tlsc-1975",
+        "pages": [
+          24,
+          43,
+          44
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1920–1921",
+        "title": "$150 for a landing and bathing beach; sea wall and entrance to the shore completed",
+        "quote": "Mattakeeset Court Town Landing Sea Wall and entrance to shore have been completed for amount appropriated.",
+        "by": "Town Report 1920; Selectmen's Report 1921 p. 5",
+        "source": "tlsc-1975",
+        "pages": [
+          24,
+          25
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: post ramp rules and a 24-hour parking limit; realign the parking",
+        "quote": "Some users park for 2-3 days at a time while off for the weekend. Such use is unfair to other users.",
+        "by": "1975 Town Landing Study Committee, recommendation 1",
+        "source": "tlsc-1975",
+        "pages": [
+          6
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "11": [
+      {
+        "date": "1908",
+        "title": "Public bathing at Winsor Street is challenged; the Selectmen begin establishing a town landing there",
+        "quote": "it is exemplified in the case of Winsor street, where the right of public bathing has been brought into question.",
+        "by": "Report of Committee on Town Landings, Town Report 1908 p. 43",
+        "source": "tlsc-1975",
+        "pages": [
+          62
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1919–1922",
+        "title": "Votes on widening the east end of Winsor Street (left to the Selectmen in 1919; tabled 1922)",
+        "quote": "Voted That the matter of widening the Easterly end of Winsor Street be left in the hands of the Selectmen.",
+        "by": "Town Meeting March 8, 1919, Art. 21 (Town Report p. 78); 1920 p. 79; 1921 p. 5; 1922 Art. 38",
+        "source": "tlsc-1975",
+        "pages": [
+          30
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: clear brush and restore \"this nearly abandoned town landing\"",
+        "quote": "Rough brush should be cut back and an opening be made to enable the addition of a few loads of sand and gravel to be brought in to restore this nearly abandoned town landing.",
+        "by": "1975 Town Landing Study Committee, recommendation 9",
+        "source": "tlsc-1975",
+        "pages": [
+          8
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "12": [
+      {
+        "date": "1899–1901",
+        "title": "Town accepts Water Street and its extension to the shore; Charles C. Clapp gives the land",
+        "quote": "This recommendation is made with the approval of Mr. Charles C. Clapp, who kindly gives the land for the purpose, simply asking in return that a sidewalk be constructed",
+        "by": "Report on Town Landings 1900; votes 1899 (highway near James K. Burgess house, \"providing there is no land damage\") and 1901 p. 7 (extension accepted). Town Clerk Plan Book 2 p. 113",
+        "source": "tlsc-1975",
+        "pages": [
+          29,
+          53
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: fix culvert and erosion; no parking",
+        "quote": "This site has not enough turning area and for reasons of security and safety we recommend that it be posted for \"No Parking.\"",
+        "by": "1975 Town Landing Study Committee, recommendation 10",
+        "source": "tlsc-1975",
+        "pages": [
+          8
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "13": [
+      {
+        "date": "1907-03-04",
+        "title": "Town accepts Josselyn Avenue as a highway over land of John E. Josselyn",
+        "quote": "Voted To accept Highway as laid out by the Selectmen February 11, 1907, commencing at South Station Street and running Easterly over land of John E. Josselyn",
+        "by": "Town Meeting March 4, 1907 (Town Report pp. 52–53). The 1975 committee lists \"Josselyn Avenue\" as a town landing",
+        "source": "tlsc-1975",
+        "pages": [
+          22,
+          42
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: reopen the foot passage for foot and bicycle use only",
+        "quote": "Recommend reopening of a foot passageway and posting for \"Foot and Bicycle Use Only.\"",
+        "by": "1975 Town Landing Study Committee, recommendation 11",
+        "source": "tlsc-1975",
+        "pages": [
+          8
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "14": [
+      {
+        "date": "1941-03-01",
+        "title": "Town names the street to the town landing \"Hardin Hill Road\"",
+        "quote": "Voted To name the street on the Southerly side of Washington Street beginning at the West Boundary of land of St. Margaret's and following to the Town Landing \"Hardin Hill Road\".",
+        "by": "Town Meeting March 1, 1941, Art. 32 (Town Report p. 136). Plan: Town of Duxbury Plan Book 1 p. 17",
+        "source": "tlsc-1975",
+        "pages": [
+          19,
+          46
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1904",
+        "title": "Town accepts a change in the layout of the way from Washington Street through land of the Sisters of St. Margaret",
+        "quote": "Voted, To accept the change made in the layout of the way From Washington Street through land now owned by the Sisters Saint Margaret and formerly Baldwin",
+        "by": "Town Report for the year ending Jan 1, 1904, p. 58. That this is the way to Hardin Hill landing is assumed from the 1941 naming vote",
+        "source": "tlsc-1975",
+        "pages": [
+          59
+        ],
+        "original": "",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: limited parking, drainage, and first refusal on the neighboring land",
+        "quote": "We recommend acquisition of the right of first refusal by the town of all adjacent properties as future park and recreational areas.",
+        "by": "1975 Town Landing Study Committee, recommendation 12",
+        "source": "tlsc-1975",
+        "pages": [
+          8
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "15": [
+      {
+        "date": "1896",
+        "title": "Town accepts \"the road and landing near Allen's Wharf\" as laid out by the Selectmen",
+        "quote": "Voted to accept the road and landing near Allen's Wharf, so-called, as laid out by the Selectmen.",
+        "by": "Town Report 1896, Report of Town Clerk p. 49, Art. 10 (warrant 1895 p. 44). The 1975 committee identifies this as Howland's Lane. Plan: Town of Duxbury Plan Book 1 p. 16. NOTE: NSRWA says the town bought the land in 1894; not reconciled",
+        "source": "tlsc-1975",
+        "pages": [
+          21,
+          39
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1915",
+        "title": "$150 for repairs to the road to the town landing near Allen's Wharf at Captain's Hill",
+        "quote": "Voted To appropriate one hundred fifty dollars ($150.00) for repairs of the road leading to the Town Landing near Allen's Wharf at Captain's Hill.",
+        "by": "Town Report 1915",
+        "source": "tlsc-1975",
+        "pages": [
+          21,
+          43
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1931",
+        "title": "Town names the street from Crescent Street to the shore \"Howlands Lane\"",
+        "quote": "Voted unanimously to name the street leading from Crescent Street to the Shore Howlands Lane.",
+        "by": "Town Meeting 1931, Art. 40 (Town Report p. 102)",
+        "source": "tlsc-1975",
+        "pages": [
+          21,
+          46
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: \"a prime site for further development\"; the town should get first refusal on Blairhaven",
+        "quote": "In the event that the New Church Union Headquarters at Newbury Street, Boston, ever decides to dispose of the property (or any part thereof) known as Blairhaven, we recommend that the Town of Duxbury should acquire the right of first refusal",
+        "by": "1975 Town Landing Study Committee, recommendation 13 (see also Article 103, 1975 Town Warrant)",
+        "source": "tlsc-1975",
+        "pages": [
+          9
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "16": [
+      {
+        "date": "1906",
+        "title": "Committee recommends a landing through the Foote and Crosby property on the east side of Border Street",
+        "quote": "recommend that a public town landing be established through property owned by the Foote's and the Crosby's",
+        "by": "Report on Town Landings, Town Report 1906 p. 39 (A. E. Green, C. F. Allen, J. H. Glover). The 1975 committee files this under Landing Road",
+        "source": "tlsc-1975",
+        "pages": [
+          23,
+          60
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1909-03-08",
+        "title": "Town votes to lay out a landing \"through the property of Mrs. Foote\" and appropriates $500",
+        "quote": "Voted That the Selectmen lay out a Town Landing at \"Hicks Point\" so-called, and another through the property of Mrs. Foote.",
+        "by": "Town Meeting March 8, 1909 (Town Report p. 64). Town of Duxbury Plan Book 2 p. 148: \"Town Landing Landing Road, 9/12/09\"",
+        "source": "tlsc-1975",
+        "pages": [
+          23,
+          43,
+          48
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: foot and bicycle landing, parking for three cars",
+        "quote": "Recommend posting as a foot and bicycle landing.",
+        "by": "1975 Town Landing Study Committee, recommendation 14",
+        "source": "tlsc-1975",
+        "pages": [
+          9
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "17": [
+      {
+        "date": "1906",
+        "title": "Committee recommends a landing through land of Harrison Loring, \"known as Hick's Point\"",
+        "quote": "another through land owned by Mr. Harrison Loring, known as Hick's Point, both being on the easterly side of Border street",
+        "by": "Report on Town Landings, Town Report 1906 p. 39 (A. E. Green, C. F. Allen, J. H. Glover)",
+        "source": "tlsc-1975",
+        "pages": [
+          20,
+          60
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1909-03-08",
+        "title": "Town votes that the Selectmen lay out a landing at Hicks Point and appropriates $500",
+        "quote": "Voted That the Selectmen lay out a Town Landing at \"Hicks Point\" so-called, and another through the property of Mrs. Foote.",
+        "by": "Town Meeting March 8, 1909 (Town Report p. 64). The 1908 report notes the Legislature, at Duxbury's initiative, authorized towns to lay out highways to low water mark",
+        "source": "tlsc-1975",
+        "pages": [
+          20,
+          43,
+          62
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: foot and bicycle landing, parking for three cars and two trailers",
+        "quote": "We feel minor improvement of road and ramp with gravel and natural materials to give limited small boat with trailer access for hunters and users of the marsh.",
+        "by": "1975 Town Landing Study Committee, recommendation 15. Its 1975 photos show a marker here",
+        "source": "tlsc-1975",
+        "pages": [
+          9
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
     "WW-06": [
       {
         "date": "1715-03-26",
@@ -47,6 +372,32 @@
         ],
         "original": "",
         "siteMatch": "assumed"
+      },
+      {
+        "date": "1930-03-01",
+        "title": "Town accepts the homesite of Myles Standish from the Standish Monument Association",
+        "quote": "Voted unanimously that the Town accept the homesite of Myles Standish, at Standish Shore, and send thanks to the Trustees of the Standish Monument Association.",
+        "by": "Town Meeting March 1, 1930, Art. 15 (Town Report p. 81). Plan: Town of Duxbury Plan Book 2 p. 144 (\"Old Myles Standish Homestead including Shore Way to water\")",
+        "source": "tlsc-1975",
+        "pages": [
+          34,
+          46,
+          48
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: the Shore Way \"currently qualifies as a landing\"",
+        "quote": "posting as a foot and bicycle landing after this way is designated a landing by the Selectpersons (as it currently qualifies as a landing).",
+        "by": "1975 Town Landing Study Committee, recommendation II.3",
+        "source": "tlsc-1975",
+        "pages": [
+          12
+        ],
+        "original": "",
+        "siteMatch": "verified"
       }
     ],
     "09": [
@@ -86,6 +437,61 @@
         ],
         "original": "",
         "siteMatch": "assumed"
+      },
+      {
+        "date": "1899-03-06",
+        "title": "1899 Report on Town Landings lists this as landing No. 6; the town adopts the surveyed landings and records the plans at Plymouth (Registry Plan Book 2, p. 6)",
+        "quote": "At Mill pond, by Blue Fish river, by town highway adjoining land formerly belonging to Amherst A. Frazer.",
+        "by": "Committee: Laurence Bradford, Hamilton Wadsworth (report dated Jan 21, 1899; Town Report for 1898, p. 38). Adopted at Town Meeting March 6, 1899: \"the surveys be recorded in Plymouth and Town Clerk's office\". The committee believed it the oldest landing in town, \"first defined in 1715\". Part was sold to Samuel A. Frazar and others, Dec. 30, 1840 (Plymouth Deeds Book 201, p. 87). NOTE: the 1975 committee files No. 6 under \"St. George Street, by Old Mill Pond\", which may be a different spot from this site.",
+        "source": "tlsc-1975",
+        "pages": [
+          28,
+          50,
+          51,
+          52,
+          57
+        ],
+        "original": "",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1899–1900",
+        "title": "Committee reports the town owns part of the wharf at Blue River Bridge; J. H. Killian offers the rest",
+        "quote": "the town owns a part of the wharf situated at the southeast corner of Blue River Bridge",
+        "by": "Report on Town Landings, Town Report for the year ending Jan 1, 1900 (A. E. Green, L. Bradford, H. Wadsworth)",
+        "source": "tlsc-1975",
+        "pages": [
+          14,
+          53
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1916-03-11",
+        "title": "Selectmen authorized to move the south line of the town land at Blue Fish River two feet north",
+        "quote": "Voted to authorize the Selectmen to rectify the southerly line of the town land between Blue Fish River and Riverview Avenue, moving the boundary stones two feet northerly.",
+        "by": "Town Meeting March 11, 1916, Town Report 1916 p. 90",
+        "source": "tlsc-1975",
+        "pages": [
+          14,
+          43
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: \"Old Mill\" as a small-craft launch with an 8-car, 3-trailer lot",
+        "quote": "Recommended as a down river site for launching small craft; i.e. prams, canoes, skiffs, etc., and posting as such.",
+        "by": "1975 Town Landing Study Committee, recommendation 8",
+        "source": "tlsc-1975",
+        "pages": [
+          7,
+          8
+        ],
+        "original": "",
+        "siteMatch": "verified"
       }
     ],
     "06": [
@@ -100,6 +506,33 @@
           339
         ],
         "original": "Record No. 5, p. 101",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1899-03-06",
+        "title": "1899 Report on Town Landings lists this as landing No. 1; the town adopts the surveyed landings and records the plans at Plymouth (Registry Plan Book 2, p. 6)",
+        "quote": "At Powder Point End by new bridge.",
+        "by": "Committee: Laurence Bradford, Hamilton Wadsworth (report dated Jan 21, 1899; Town Report for 1898, p. 38). Adopted at Town Meeting March 6, 1899: \"the surveys be recorded in Plymouth and Town Clerk's office\". The report says No. 1 was \"laid out by the County Commissioners in January, 1870\"; the 1899 meeting voted it be recorded as a \"Highway to the sea.\"",
+        "source": "tlsc-1975",
+        "pages": [
+          18,
+          50,
+          51,
+          57
+        ],
+        "original": "",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: recommendations for both sides of Powder Point Bridge (Powder Point end)",
+        "quote": "The lower parking lot is a part of the actual landing.",
+        "by": "1975 Town Landing Study Committee, recommendation 6",
+        "source": "tlsc-1975",
+        "pages": [
+          7
+        ],
+        "original": "",
         "siteMatch": "assumed"
       }
     ],
@@ -116,6 +549,33 @@
         ],
         "original": "Record No. 5, p. 101",
         "siteMatch": "assumed"
+      },
+      {
+        "date": "1899-03-06",
+        "title": "1899 Report on Town Landings lists this as landing No. 1; the town adopts the surveyed landings and records the plans at Plymouth (Registry Plan Book 2, p. 6)",
+        "quote": "At Powder Point End by new bridge.",
+        "by": "Committee: Laurence Bradford, Hamilton Wadsworth (report dated Jan 21, 1899; Town Report for 1898, p. 38). Adopted at Town Meeting March 6, 1899: \"the surveys be recorded in Plymouth and Town Clerk's office\". The report says No. 1 was \"laid out by the County Commissioners in January, 1870\"; the 1899 meeting voted it be recorded as a \"Highway to the sea.\"",
+        "source": "tlsc-1975",
+        "pages": [
+          18,
+          50,
+          51,
+          57
+        ],
+        "original": "",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: recommendations for both sides of Powder Point Bridge (Powder Point end)",
+        "quote": "The lower parking lot is a part of the actual landing.",
+        "by": "1975 Town Landing Study Committee, recommendation 6",
+        "source": "tlsc-1975",
+        "pages": [
+          7
+        ],
+        "original": "",
+        "siteMatch": "assumed"
       }
     ],
     "WW-01": [
@@ -123,7 +583,7 @@
         "date": "Date unknown",
         "title": "Plaque on site credits Eben Ellison's gift of land and money for the beach",
         "quote": "whose generous gift of land and money made this beach available for the enjoyment of the citizens of Duxbury",
-        "by": "Plaque text as reported by NSRWA, which lists the owner as the Town of Duxbury. The deed or town vote accepting the gift has not been found",
+        "by": "Plaque text as reported by NSRWA, which lists the owner as the Town of Duxbury. The town accepted the gift in 1944 (see the 1944 record)",
         "source": "nsrwa-shipyard",
         "url": "https://nsrwa.org/listing/shipyard-lane-beach",
         "original": "",
@@ -138,6 +598,427 @@
         "url": "https://drewarchives.org/finding-aids/small-collections/ellison-grace/",
         "original": "",
         "siteMatch": "assumed"
+      },
+      {
+        "date": "1944",
+        "title": "Town Meeting accepts Eben H. Ellison's deed of the upland and beach, to low water mark, restricted to Duxbury residents and their guests",
+        "quote": "Said premises are conveyed subject to the restriction that they shall be used only for recreational purposes and be restricted to the use of the residents of Duxbury and their guests; and to the further restriction that no pier shall be erected on said premises.",
+        "by": "Annual Town Meeting 1944, Art. 24, voted unanimously (Town Report for 1944 p. 108). The 1943 Selectmen's Report (p. 12) notes \"some opposition\". The deed's book and page are not given; the 1893 I. L. Rich plan it cites is Registry Plan Book 1 p. 9",
+        "source": "tlsc-1975",
+        "pages": [
+          32,
+          46,
+          47,
+          69
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "01": [
+      {
+        "date": "1897–1898",
+        "title": "Town accepts the highway from Cut Island to the Hummock at Duxbury Beach and appropriates $500 to build it",
+        "quote": "Voted To accept the Highway from the South End of Cut Island to the North end of Hummock as laid out by the Selectmen",
+        "by": "Town Reports 1897 p. 45 (Art. 9) and 1898 p. 52, under the petition of B. S. Bryant and others. The 1975 committee files this under Ford's Stand; no layout of the landing itself is cited",
+        "source": "tlsc-1975",
+        "pages": [
+          17,
+          39,
+          40
+        ],
+        "original": "",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: Ford's Stand needs a study of use, parking and security",
+        "quote": "the town may well develop one of the four most important landings here.",
+        "by": "1975 Town Landing Study Committee, recommendation 16",
+        "source": "tlsc-1975",
+        "pages": [
+          9,
+          10
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "02": [
+      {
+        "date": "1899-03-06",
+        "title": "1899 Report on Town Landings lists this as landing No. 5; the town adopts the surveyed landings and records the plans at Plymouth (Registry Plan Book 2, p. 6)",
+        "quote": "At Old Cove, bordering on land now belonging to Samuel Weston and others, by new town road leading to Abrams Hill",
+        "by": "Committee: Laurence Bradford, Hamilton Wadsworth (report dated Jan 21, 1899; Town Report for 1898, p. 38). Adopted at Town Meeting March 6, 1899: \"the surveys be recorded in Plymouth and Town Clerk's office\". The committee called it \"the most valuable one that the town possesses\" (date on the town books: 1834).",
+        "source": "tlsc-1975",
+        "pages": [
+          15,
+          50,
+          51,
+          57
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1843-12-30",
+        "title": "Deed: Town of Duxbury to George Loring (Plymouth Deeds Book 215, p. 28); part of the landing conveyed, the rest reserved to the town forever",
+        "quote": "it is expressly stated by deed, Dec. 30, 1843 - Plymouth Deeds, book 215, page 28 - Town of Duxbury to George Loring, that the present landing place shall be forever reserved to the town.",
+        "by": "As summarized in the 1899 Report on Town Landings, following the Town Meeting of Nov. 13, 1843. The deed itself has not yet been viewed",
+        "source": "tlsc-1975",
+        "pages": [
+          51
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1924-03-01",
+        "title": "Town votes to exchange land at the Old Cove landing with Helen Ripley Clapp and Clara Ripley Evans",
+        "quote": "Voted To exchange a piece of land at town landing at Old Cove, so-called, for a piece adjoining said town landing",
+        "by": "Town Report 1924, p. 72 (the article was first tabled March 17, 1923)",
+        "source": "tlsc-1975",
+        "pages": [
+          15,
+          45
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: post parking for ten cars, add sand and gravel for a beach, fix the washout",
+        "quote": "This site, with a minimal amount of effort, would be a good high water bathing site for limited local use.",
+        "by": "1975 Town Landing Study Committee, recommendation 2",
+        "source": "tlsc-1975",
+        "pages": [
+          6
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "03": [
+      {
+        "date": "1899-03-06",
+        "title": "1899 Report on Town Landings lists this as landing No. 4; the town adopts the surveyed landings and records the plans at Plymouth (Registry Plan Book 2, p. 6)",
+        "quote": "At Foot of lane through land now belonging to E. F. Adams, near what was formerly Drew's salt works, at Duck Hill river.",
+        "by": "Committee: Laurence Bradford, Hamilton Wadsworth (report dated Jan 21, 1899; Town Report for 1898, p. 38). Adopted at Town Meeting March 6, 1899: \"the surveys be recorded in Plymouth and Town Clerk's office\". Date on the town books: 1834.",
+        "source": "tlsc-1975",
+        "pages": [
+          16,
+          50,
+          51,
+          57
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1904",
+        "title": "Mrs. Ellen F. Adams allowed to move the way to the landing to the east side of her property",
+        "quote": "Voted To grant Mrs. Ellen F. Adams the right to change the way through her property to the landing to run on the easterly side of her property",
+        "by": "Town Report 1904. The 1899 report places this landing on land of \"E. F. Adams\"; that this vote concerns this landing is assumed",
+        "source": "tlsc-1975",
+        "pages": [
+          42
+        ],
+        "original": "",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: post as a foot landing, no parking",
+        "quote": "Recommended that the site be posted as a foot landing. No parking. (Primary use is as an access to the marsh.)",
+        "by": "1975 Town Landing Study Committee, recommendation 3",
+        "source": "tlsc-1975",
+        "pages": [
+          6
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "04": [
+      {
+        "date": "1899-03-06",
+        "title": "1899 Report on Town Landings lists this as landing No. 3; the town adopts the surveyed landings and records the plans at Plymouth (Registry Plan Book 2, p. 6)",
+        "quote": "At Foot of lane through land formerly belonging to Simeon Soule, by Duck Hill river.",
+        "by": "Committee: Laurence Bradford, Hamilton Wadsworth (report dated Jan 21, 1899; Town Report for 1898, p. 38). Adopted at Town Meeting March 6, 1899: \"the surveys be recorded in Plymouth and Town Clerk's office\". The committee called it \"a very old town landing\" (dates on the town books: 1803 and 1834).",
+        "source": "tlsc-1975",
+        "pages": [
+          27,
+          50,
+          51,
+          57
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: post as a foot landing, no parking",
+        "quote": "Recommended posting as a foot landing. No parking.",
+        "by": "1975 Town Landing Study Committee, recommendation 4. Its 1975 photos show a stone marker here",
+        "source": "tlsc-1975",
+        "pages": [
+          6
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "05": [
+      {
+        "date": "1899-03-06",
+        "title": "1899 Report on Town Landings lists this as landing No. 2; the town adopts the surveyed landings and records the plans at Plymouth (Registry Plan Book 2, p. 6)",
+        "quote": "At Foot of lane by land formerly belonging to Reuben and Clark Peterson, by Duck Hill river.",
+        "by": "Committee: Laurence Bradford, Hamilton Wadsworth (report dated Jan 21, 1899; Town Report for 1898, p. 38). Adopted at Town Meeting March 6, 1899: \"the surveys be recorded in Plymouth and Town Clerk's office\". Date on the town books: 1834.",
+        "source": "tlsc-1975",
+        "pages": [
+          26,
+          50,
+          51,
+          57
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: foot landing only, keep the emergency access clear",
+        "quote": "Recommended as a foot landing. Parking not recommended. Do not block emergency landing.",
+        "by": "1975 Town Landing Study Committee, recommendation 5. Its 1975 photos show markers here",
+        "source": "tlsc-1975",
+        "pages": [
+          6,
+          7
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "WW-02": [
+      {
+        "date": "1907",
+        "title": "Town accepts the Standish Shore ways (Elder Brewster, Samoset, Sagamore and Massasoit Roads) as laid out by the Selectmen",
+        "quote": "Voted, to accept the ways at Standish Shore, as laid out by the Selectmen February 11, 1907. Columbus Avenue, leading from southwest corner of land of Caroline C. Rushton. Brewster Road, Samoset Road, Sagamore Road and Massasoit Road, all leading from Columbus Avenue to the shore.",
+        "by": "Town Report for 1907, p. 52",
+        "source": "tlsc-1975",
+        "pages": [
+          34,
+          61
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1920",
+        "title": "Proposed re-layout of the Porter Shore roads; the original plans are Registry Plan Book 1 p. 227 (1901) and Plan Book 2 p. 290 (1903)",
+        "quote": "This plan shows Puritan Road and the four parallel roads from it to the shore, Elder Brewster, Samoset, Sagamore and Massasoit.",
+        "by": "Town Report for 1920, \"Proposed Re-Layout of Porter Shore Roads\"",
+        "source": "tlsc-1975",
+        "pages": [
+          64
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: these ways have been wrongly posted as private; it asks for a Standish Shore Study Committee",
+        "quote": "some of these ways are or have been incorrectly identified or posted as private. This should cease.",
+        "by": "1975 Town Landing Study Committee, recommendation II.4. It also says town funds improved these ways to the 1907–08 high water mark",
+        "source": "tlsc-1975",
+        "pages": [
+          12
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "WW-03": [
+      {
+        "date": "1907",
+        "title": "Town accepts the Standish Shore ways (Elder Brewster, Samoset, Sagamore and Massasoit Roads) as laid out by the Selectmen",
+        "quote": "Voted, to accept the ways at Standish Shore, as laid out by the Selectmen February 11, 1907. Columbus Avenue, leading from southwest corner of land of Caroline C. Rushton. Brewster Road, Samoset Road, Sagamore Road and Massasoit Road, all leading from Columbus Avenue to the shore.",
+        "by": "Town Report for 1907, p. 52",
+        "source": "tlsc-1975",
+        "pages": [
+          34,
+          61
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1920",
+        "title": "Proposed re-layout of the Porter Shore roads; the original plans are Registry Plan Book 1 p. 227 (1901) and Plan Book 2 p. 290 (1903)",
+        "quote": "This plan shows Puritan Road and the four parallel roads from it to the shore, Elder Brewster, Samoset, Sagamore and Massasoit.",
+        "by": "Town Report for 1920, \"Proposed Re-Layout of Porter Shore Roads\"",
+        "source": "tlsc-1975",
+        "pages": [
+          64
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: these ways have been wrongly posted as private; it asks for a Standish Shore Study Committee",
+        "quote": "some of these ways are or have been incorrectly identified or posted as private. This should cease.",
+        "by": "1975 Town Landing Study Committee, recommendation II.4. It also says town funds improved these ways to the 1907–08 high water mark",
+        "source": "tlsc-1975",
+        "pages": [
+          12
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1941-03-01",
+        "title": "Town instructs the Selectmen to lay out part of Samoset Road as a public highway",
+        "quote": "Voted that the Town instruct the Selectmen to lay out as a public highway that part of Samoset Road",
+        "by": "Town Meeting March 1, 1941, Art. 36 (Town Report p. 137). It cites the plan \"A part of the Old Standish and Elder Brewster Farms\" (rev. 1903), Registry Plan Book 2 p. 290. The text says \"Samoset\", which supports the site's name",
+        "source": "tlsc-1975",
+        "pages": [
+          34,
+          46
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "WW-04": [
+      {
+        "date": "1907",
+        "title": "Town accepts the Standish Shore ways (Elder Brewster, Samoset, Sagamore and Massasoit Roads) as laid out by the Selectmen",
+        "quote": "Voted, to accept the ways at Standish Shore, as laid out by the Selectmen February 11, 1907. Columbus Avenue, leading from southwest corner of land of Caroline C. Rushton. Brewster Road, Samoset Road, Sagamore Road and Massasoit Road, all leading from Columbus Avenue to the shore.",
+        "by": "Town Report for 1907, p. 52",
+        "source": "tlsc-1975",
+        "pages": [
+          34,
+          61
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1920",
+        "title": "Proposed re-layout of the Porter Shore roads; the original plans are Registry Plan Book 1 p. 227 (1901) and Plan Book 2 p. 290 (1903)",
+        "quote": "This plan shows Puritan Road and the four parallel roads from it to the shore, Elder Brewster, Samoset, Sagamore and Massasoit.",
+        "by": "Town Report for 1920, \"Proposed Re-Layout of Porter Shore Roads\"",
+        "source": "tlsc-1975",
+        "pages": [
+          64
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: these ways have been wrongly posted as private; it asks for a Standish Shore Study Committee",
+        "quote": "some of these ways are or have been incorrectly identified or posted as private. This should cease.",
+        "by": "1975 Town Landing Study Committee, recommendation II.4. It also says town funds improved these ways to the 1907–08 high water mark",
+        "source": "tlsc-1975",
+        "pages": [
+          12
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "WW-05": [
+      {
+        "date": "1907",
+        "title": "Town accepts the Standish Shore ways (Elder Brewster, Samoset, Sagamore and Massasoit Roads) as laid out by the Selectmen",
+        "quote": "Voted, to accept the ways at Standish Shore, as laid out by the Selectmen February 11, 1907. Columbus Avenue, leading from southwest corner of land of Caroline C. Rushton. Brewster Road, Samoset Road, Sagamore Road and Massasoit Road, all leading from Columbus Avenue to the shore.",
+        "by": "Town Report for 1907, p. 52",
+        "source": "tlsc-1975",
+        "pages": [
+          34,
+          61
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1920",
+        "title": "Proposed re-layout of the Porter Shore roads; the original plans are Registry Plan Book 1 p. 227 (1901) and Plan Book 2 p. 290 (1903)",
+        "quote": "This plan shows Puritan Road and the four parallel roads from it to the shore, Elder Brewster, Samoset, Sagamore and Massasoit.",
+        "by": "Town Report for 1920, \"Proposed Re-Layout of Porter Shore Roads\"",
+        "source": "tlsc-1975",
+        "pages": [
+          64
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: these ways have been wrongly posted as private; it asks for a Standish Shore Study Committee",
+        "quote": "some of these ways are or have been incorrectly identified or posted as private. This should cease.",
+        "by": "1975 Town Landing Study Committee, recommendation II.4. It also says town funds improved these ways to the 1907–08 high water mark",
+        "source": "tlsc-1975",
+        "pages": [
+          12
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1920-03-13",
+        "title": "Selectmen instructed to lay out Massasoit Road and Mayflower Avenue as a public highway to near the Myles Standish cellar",
+        "quote": "Voted To instruct Selectmen to lay out as a public highway, Massasoit Road and Mayflower Avenue from Columbus Avenue to a point near the old Myles Standish cellar.",
+        "by": "Town Meeting March 13, 1920 (Town Report p. 79). By 1921 the Selectmen reported both roads \"graded and hardened\"",
+        "source": "tlsc-1975",
+        "pages": [
+          44
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "WW-09": [
+      {
+        "date": "1972",
+        "title": "Town votes to acquire Bay Farm (about 44 acres, Block P) for recreation; $200,000",
+        "quote": "acquire in Fee simple by purchase, or eminent domain, if necessary, for recreational purposes",
+        "by": "Town Meeting 1972, Art. 21, carried 413 to 97. Parcels from the Bay Farm Trust and the Grace M. Walker Trust; Land Court Plan 14792-6",
+        "source": "tlsc-1975",
+        "pages": [
+          33,
+          70
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      },
+      {
+        "date": "1975",
+        "title": "1975 committee: a separate group should plan Bay Farm's beach, parking and security",
+        "quote": "We feel to allow this area to continue unattended is to invite misuse and the possible creation of a public nuisance.",
+        "by": "1975 Town Landing Study Committee, recommendation II.2",
+        "source": "tlsc-1975",
+        "pages": [
+          11
+        ],
+        "original": "",
+        "siteMatch": "verified"
+      }
+    ],
+    "WW-10": [
+      {
+        "date": "1975",
+        "title": "1975 committee: the town's only documented fresh water way (plan: Town of Duxbury Plan Book 2 p. 111)",
+        "quote": "We recommend that the Town's only documented fresh water way be posted as: A recreational area.",
+        "by": "1975 Town Landing Study Committee, recommendation II.1. Its reference sheet says \"the Town has a public way to the shores\"",
+        "source": "tlsc-1975",
+        "pages": [
+          11,
+          35
+        ],
+        "original": "",
+        "siteMatch": "verified"
       }
     ]
   }
