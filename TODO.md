@@ -29,36 +29,36 @@ Create two map versions for each public landing/way to the water in Duxbury, MA:
 
 ## PHASE 2: Site Folders & Data Collection
 
-### TOWN LANDINGS (numbered North to South per overview map)
-- [x] 01 - Ford Stand Landing (Ocean Road North)
-- [x] 02 - Old Cove Landing (75 Cove St)
-- [x] 03 - Drew Salt Works Landing (Bay Road North)
-- [x] 04 - Shipyard Lane / Ellison Beach (99 Ship Yard Lane)
-- [x] 05 - Powder Point Landing
-- [x] 06 - Powder Point Bridge (370 Powder Point Ave)
-- [x] 07 - Anchorage Lane Landing
-- [x] 08 - Bluefish River Landing
-- [x] 09 - Sagamore Road Landing
-- [x] 10 - Mattakeeset Town Pier / Mattakeeset Court (35 Mattakeeset Court)
-- [x] 11 - Winsor Street Landing (Seasonal Recreational Access)
-- [x] 12 - Jocelyn Lane Landing ⚠️ APPROX coords — verify against Chapter 7
-- [x] 13 - Massasoit Road Landing
-- [x] 14 - Water Street Landing (Deep Water)
-- [x] 15 - Harden Hill Road Landing
-- [x] 16 - Elderberry Lane
-- [x] 17 - Bay Farm (31 Loring St) — fixed coords (was in water)
-- [x] 18 - Hicks Point Road Landing
-- [x] 19 - Miles Standish Home Site
-- [x] 20 - Howland's Landing / Deep Water (23 Howland Landing)
-- [x] 21 - Landing Road Beach (44 Landing Rd)
-- [x] 22 - Island Creek Pond / Crocker Memorial Park (287 Tobey Garden St)
+### TOWN LANDINGS (renumbered 2026-11-09 to follow Protective Bylaw Art. 300 §302 order; see INSIGHTS.md)
+- [x] 01 - Ford Stand Landing
+- [x] 02 - Old Cove Landing
+- [x] 03 - Drew Salt Works Landing
+- [x] 04 - Simeon Soule's Landing (formerly WW-01)
+- [x] 05 - Peterson's Landing (formerly WW-04)
+- [x] 06 - Powder Point Landing (formerly 05)
+- [x] 07 - Powder Point Bridge (West End) (formerly 06)
+- [x] 08 - Anchorage Lane Landing (formerly 07)
+- [x] 09 - Bluefish River Landing (formerly 08)
+- [x] 10 - Mattakeeset Town Pier
+- [x] 11 - Winsor Street Landing
+- [x] 12 - Water Street Landing (formerly 14)
+- [x] 13 - Jocelyn Lane Landing (formerly 12)
+- [x] 14 - Harden Hill Road Landing (formerly 15)
+- [x] 15 - Howland's Landing (formerly 20)
+- [x] 16 - Landing Road Beach (formerly 21)
+- [x] 17 - Hicks Point Road Landing (formerly 18)
 
 ### WAYS TO THE WATER
-- [x] WW-01 - Simeon Soule's Landing ⚠️ APPROX coords — verify against Chapter 7
+- [x] WW-01 - Shipyard Lane (Ellison Beach) (formerly 04)
 - [x] WW-02 - Elder Brewster Road
-- [x] WW-03 - Somerset Road ⚠️ APPROX coords — verify against Chapter 7
-- [x] WW-04 - Peterson's Landing (78 George St)
-- [x] WW-05 - Longview Road ⚠️ APPROX coords — verify against Chapter 7
+- [x] WW-03 - Samoset Road (formerly "Somerset Road", misnamed)
+- [x] WW-04 - Sagamore Road Landing (formerly 09)
+- [x] WW-05 - Massasoit Road Landing (formerly 13)
+- [x] WW-06 - Miles Standish Home Site (formerly 19)
+- [x] WW-07 - Longview Road (formerly WW-05)
+- [x] WW-08 - Elderberry Lane (formerly 16)
+- [x] WW-09 - Bay Farm (formerly 17)
+- [x] WW-10 - Island Creek Pond (formerly 22)
 
 ---
 
@@ -74,10 +74,10 @@ Create two map versions for each public landing/way to the water in Duxbury, MA:
 - [ ] Fill in Mitigation Plans for each site
 
 ## PHASE 4: Coordinate Verification (NEXT STEP)
-- [ ] WW-01 Simeon Soule's Landing — verify coords with user or Chapter 7
-- [ ] WW-03 Somerset Road — verify coords
-- [ ] WW-05 Longview Road — verify coords
-- [ ] 12 Jocelyn Lane — verify coords
+- [ ] 04 Simeon Soule's Landing (formerly WW-01) — verify coords
+- [ ] WW-03 Samoset Road (formerly "Somerset Road", misnamed) — verify coords
+- [ ] WW-07 Longview Road (formerly WW-05) — verify coords
+- [ ] 13 Jocelyn Lane (formerly 12) — verify coords
 - [ ] Re-run generate-maps.js after any corrections (takes ~3 min)
 
 ---
@@ -97,7 +97,10 @@ Create two map versions for each public landing/way to the water in Duxbury, MA:
 - One folder per site named with number and slug (e.g., `01-ford-stand-landing/`)
 
 ## NOTES / BLOCKERS
-- PDF is image-based (scanned) - text confirmed not extractable
+- ~~PDF is image-based (scanned)~~ Corrected 2026-11-09: the PDF has a text layer; see INSIGHTS.md "Town Landings vs Ways to the Water"
 - Site list confirmed complete by user
 - Powder Point Bridge closed Dec 2025 - late March/April 2026 for repairs
 - node-canvas (used by staticmaps) may have Windows native dependency issues - test first
+
+## DECISIONS (2026-11-09)
+- **Site categories** follow Protective Bylaw Art. 300 §302, as quoted in Bay Management Plan §7.2(b). Sites were renumbered and old URLs redirect. Shipyard Lane was moved to Ways to the Water (WW-01) after review with Jon.

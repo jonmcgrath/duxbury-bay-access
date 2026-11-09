@@ -53,8 +53,36 @@ Source: Duxbury Bay Management Plan (2013), Chapter 7; overview sketch `unnamed 
 
 ---
 
+## Town Landings vs Ways to the Water: the legal definitions (found 2026-11-09)
+
+**Source:** Duxbury Bay Management Plan (Sept 2011, rev. 2012), §7.2(b), PDF pp. 49–50, which quotes **Duxbury Protective Bylaw Article 300, Section 302**. *The current bylaw text has not been checked. The bylaw may have been amended since 2011.*
+
+- **Town landing:** "designated areas to which the Town has an **undoubted right**, which have been **surveyed and recorded with the Plymouth County Registry of Deeds to the low water mark (mean)**"
+- **Way to the water:** "designated areas to which the Town has rights as public ways to the water, **by gift, or otherwise** which **may or may not be restricted** as to their usage and which **have not been specifically laid out and surveyed to the low water mark** and recorded as a Town Landing." This also includes "roads properly laid out, improved and extended to the water by funds raised and appropriated by the Town and designated as public highways."
+
+**What this means:** the difference is about legal title, not size or facilities. A town landing should have a **recorded survey plan at the Plymouth County Registry**. A way to the water has rights that are less certain, so its deed and town-meeting history matters more.
+
+### Bylaw lists vs. this project's categories (sites.json), north to south as listed
+| Bylaw: Town Landings (15) | Project category |
+|---|---|
+| Ford Stand, Old Cove, Drew Salt Works, Powder Point Bridge (west end, both sides), Anchorage Lane, Bluefish River, Mattakeeset Town Pier, Winsor St, Water St, Jocelyn Lane, Harden Hill Rd, Landing Road, Hicks Point Rd | town-landing ✔ |
+| **Simeon Soule's Landing** | **way-to-water ✘ (WW-01)** |
+| **Peterson's Landing** | **way-to-water ✘ (WW-04)** |
+
+| Bylaw: Ways to the Water (9, plus Island Creek Pond) | Project category |
+|---|---|
+| Elder Brewster Rd, Longview Rd | way-to-water ✔ |
+| **Samoset Road** | project has **"Somerset Road" (WW-03)**. This is probably a misname. *Assumed, not verified.* |
+| **Shipyard Lane / Ellison Beach, Sagamore Rd, Massasoit Rd, Miles Standish Home Site, Elderberry Lane, Bay Farm** | **town-landing ✘ (04, 09, 13, 19, 16, 17)** |
+| Island Creek Pond: "not included in the by-law," but included in the plan as a way to a herring run | town-landing ✘ (22) |
+
+**RESOLVED 2026-11-09 (approved by Jon):** sites.json was re-categorized and renumbered to follow the bylaw lists and their north-to-south order. The result is 17 town landings and 10 ways to the water. Simeon Soule's and Peterson's became town landings 04 and 05. Shipyard Lane, Sagamore, Massasoit, Miles Standish Home Site, Elderberry, Bay Farm and Island Creek Pond became ways WW-01, WW-04, WW-05, WW-06, WW-08, WW-09 and WW-10. "Somerset Road" was renamed **Samoset Road** (WW-03). Sites missing from the bylaw were placed by location and noted on their pages. Old page URLs redirect to the new ones (`redirects.json`), and each site keeps a `formerId` in sites.json. The tables above use the **old** IDs.
+- **Shipyard Lane (WW-01):** Jon first wanted to keep it as a town landing, because the Ellison family gave it to the town. He then agreed that a gift fits the bylaw's way-to-the-water wording ("by gift, or otherwise"), and it was moved the same day. Evidence: the on-site plaque credits Eben Ellison's "generous gift of land and money" ([NSRWA listing](https://nsrwa.org/listing/shipyard-lane-beach), checked 2026-11-09). **Not yet found:** the deed or town-meeting vote accepting the gift, and its date.
+
+**Not in either bylaw list:** 05 Powder Point Landing (now 06), 20 Howland's Landing (now 15). The plan's §7.2(a) also counts "16 town landings, 10 ways to the water" but lists 15 landings, so one landing is unaccounted for. Howland's may be it (the NSRWA says the town bought it in 1894). *Unverified.*
+
 ## Key Observations
-1. The PDF (Duxbury Bay Management Plan) is a scanned image - text not extractable programmatically
+1. ~~The PDF is a scanned image~~ **Corrected 2026-11-09:** the Bay Management Plan PDF has a text layer (produced by Word 2010). Extract it with `pdftotext -layout`.
 2. The overview sketch shows ~25 numbered access points with two primary categories
 3. Several sites have time/season restrictions (Winsor Street = seasonal; Harden Hill = time-restricted)
 4. Some "Ways to the Water" have zero or minimal parking
@@ -82,10 +110,10 @@ Source: Duxbury Bay Management Plan (2013), Chapter 7; overview sketch `unnamed 
 These 4 sites could not be geocoded from OpenStreetMap and used estimated positions:
 | Site | Estimated Coords | Basis |
 |------|-----------------|-------|
-| 12 - Jocelyn Lane Landing | 42.0200, -70.6770 | Between Water St and Massasoit Rd |
-| WW-01 - Simeon Soule's Landing | 42.0350, -70.6590 | Near Powder Point area per overview image |
-| WW-03 - Somerset Road | 42.0490, -70.6770 | Near George Street / Peterson's Landing |
-| WW-05 - Longview Road | 42.0155, -70.6860 | Near Elderberry Lane |
+| 12 - Jocelyn Lane Landing (now 13) | 42.0200, -70.6770 | Between Water St and Massasoit Rd |
+| WW-01 - Simeon Soule's Landing (now 04) | 42.0350, -70.6590 | Near Powder Point area per overview image |
+| WW-03 - Somerset Road (now WW-03 Samoset Road) | 42.0490, -70.6770 | Near George Street / Peterson's Landing |
+| WW-05 - Longview Road (now WW-07) | 42.0155, -70.6860 | Near Elderberry Lane |
 
 **Action**: Verify against Chapter 7 maps or physical GPS check. Run `node generate-maps.js` to regenerate after updating coordinates in `generate-maps.js`.
 

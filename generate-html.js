@@ -55,8 +55,9 @@ function overviewMarkerPct(lat, lng) {
 
 function legendSVG() {
   const pad=14, lineH=22, ldotR=9, fsize=13, hsize=13, col2X=340;
-  const col1 = TOWN_LANDINGS.slice(0, 11);
-  const col2 = TOWN_LANDINGS.slice(11);
+  const half = Math.ceil(TOWN_LANDINGS.length / 2);
+  const col1 = TOWN_LANDINGS.slice(0, half);
+  const col2 = TOWN_LANDINGS.slice(half);
 
   const rowItem = (x, y, color, label, text, approx, href) => `
     <a href="${href}" class="marker-link">
@@ -221,19 +222,22 @@ function historySectionHTML(site) {
   const items = recs.map(r => {
     const src = HISTORY.sources[r.source];
     usedSources.add(r.source);
-    const links = r.pages.map(p =>
-      `<a href="../${src.pagesDir}/p${p}.jpg" target="_blank" rel="noopener">p. ${p} ↗</a>`).join('');
+    // A record cites scanned pages (images in the repo) or a web page.
+    const links = r.pages
+      ? r.pages.map(p => `<a href="../${src.pagesDir}/p${p}.jpg" target="_blank" rel="noopener">p. ${p} ↗</a>`).join('')
+      : `<a href="${escapeHTML(r.url)}" target="_blank" rel="noopener">View source ↗</a>`;
+    const where = r.pages ? `, p. ${r.pages.join(', ')}` : '';
     return `<li>
         <span class="rec-date">${escapeHTML(r.date)}</span>${escapeHTML(r.title)}
-        ${r.siteMatch === 'assumed' ? '<span class="rec-assumed" title="The link between this record and this modern site is assumed from place names, not yet verified">site match assumed</span>' : ''}
+        ${r.siteMatch === 'assumed' ? '<span class="rec-assumed" title="The link between this record and this modern site is assumed, not yet verified">site match assumed</span>' : ''}
         <blockquote>“${escapeHTML(r.quote)}”</blockquote>
-        <div class="rec-cite">${escapeHTML(r.by)}. ${escapeHTML(src.title)}, p. ${r.pages.join(', ')}${r.original ? ` (original ${escapeHTML(r.original)})` : ''}.</div>
+        <div class="rec-cite">${escapeHTML(r.by)}. ${escapeHTML(src.title)}${where}${r.original ? ` (original ${escapeHTML(r.original)})` : ''}.</div>
         <div class="rec-pages">${links}</div>
       </li>`;
   }).join('\n      ');
   const sourceNotes = [...usedSources].map(k => {
     const s = HISTORY.sources[k];
-    return `<em>${escapeHTML(s.title)}</em>. ${escapeHTML(s.detail)} <a href="${s.url}" target="_blank" rel="noopener">Full book ↗</a>`;
+    return `<em>${escapeHTML(s.title)}</em>. ${escapeHTML(s.detail)} <a href="${s.url}" target="_blank" rel="noopener">${s.pagesDir ? "Full book" : "Source page"} ↗</a>`;
   }).join('<br>');
   return `<section id="history">
     <h2>Historical Records</h2>
@@ -654,6 +658,35 @@ function generateSiteHTML(site, prev, next) {
   console.log(`✓  ${site.id}-${site.slug}/index.html`);
 }
 
+// ─── REDIRECTS (old site folder → new) ────────────────────────────────────────
+// Keeps earlier links working after sites were renumbered (see redirects.json).
+function generateRedirects() {
+  const { redirects } = require('./redirects.json');
+  const current = new Set(ALL_SITES.map(s => `${s.id}-${s.slug}`));
+  for (const [oldFolder, newFolder] of Object.entries(redirects)) {
+    if (current.has(oldFolder)) throw new Error(`Redirect source ${oldFolder} is a live site folder`);
+    const site = ALL_SITES.find(s => `${s.id}-${s.slug}` === newFolder);
+    if (!site) throw new Error(`Redirect target ${newFolder} is not a site folder`);
+    const target = `../${newFolder}/index.html`;
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=${target}">
+  <link rel="canonical" href="${target}">
+  <title>Moved: ${escapeHTML(site.name)}</title>
+</head>
+<body>
+  <p>This page has moved to <a href="${target}">${site.id}. ${escapeHTML(site.name)}</a>.</p>
+</body>
+</html>
+`;
+    fs.mkdirSync(path.join(__dirname, oldFolder), { recursive: true });
+    fs.writeFileSync(path.join(__dirname, oldFolder, 'index.html'), html, 'utf8');
+    console.log(`↪  ${oldFolder}/ → ${newFolder}/`);
+  }
+}
+
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 function main() {
@@ -666,6 +699,9 @@ function main() {
     const next = i < ALL_SITES.length - 1 ? ALL_SITES[i + 1] : null;
     generateSiteHTML(ALL_SITES[i], prev, next);
   }
+
+  console.log('\nGenerating redirects for renamed site folders…');
+  generateRedirects();
 
   console.log('\nDone.');
   console.log('Open all-sites-map.html in a browser to use the interactive map.');

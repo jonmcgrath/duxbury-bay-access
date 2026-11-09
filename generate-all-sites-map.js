@@ -84,8 +84,9 @@ function buildOverlaySVG() {
   const hsize  = 13;
   const col2X  = 340;
 
-  const col1 = TOWN_LANDINGS.slice(0, 11);
-  const col2 = TOWN_LANDINGS.slice(11);
+  const half = Math.ceil(TOWN_LANDINGS.length / 2);
+  const col1 = TOWN_LANDINGS.slice(0, half);
+  const col2 = TOWN_LANDINGS.slice(half);
 
   const rowItem = (x, y, color, label, text, approx) => `
     <circle cx="${x + ldotR}" cy="${y + ldotR - 1}" r="${ldotR}" fill="${color}"/>

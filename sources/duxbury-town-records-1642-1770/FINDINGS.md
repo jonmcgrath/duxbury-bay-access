@@ -18,7 +18,7 @@ Searched 2026-11-09 for: landing, highway, to the water, beach, flats, cove, Pow
 - **Cite:** printed pp. 107–108; original Vol. a, Page 99 (**verified** 2026-11-09 against the page image `pages/p107.jpg`; the OCR had "'J9"); text lines ~5540–5592.
 - **Key text (verbatim):** "...allowing all the ground on the Southerly side of the said fence to bluefish river channel, for a **common landing place for said town**..." A 40-foot highway was laid out from "a place commonly called the old landing place" up to "the road or high way, that leads from Marshfield to Plymouth."
 - **Boundary landmarks:** the mouth of a small creek; Abraham Samson Sen.'s stone wall; two great stones on the bank; a run of water from a great salt pond; south of the houses of Ichabod Samson, Edward Arnold and Abraham Samson; a small whitish rock; a big rock on a knoll near Edmond Chanler's meadow (printed spelling "Chanler's", **verified** against `pages/p108.jpg`; the OCR had "Clninler's"); Capt. John Alden's land; Doctor Delanoe's house.
-- **Likely modern site:** 08 Bluefish River Landing. *ASSUMED, not verified.*
+- **Likely modern site:** 09 Bluefish River Landing (numbered 08 before 2026-11-09). *ASSUMED, not verified.*
 
 ## 2. Town vote confirming landing rights at the old landing place (1718)
 
@@ -32,7 +32,7 @@ Searched 2026-11-09 for: landing, highway, to the water, beach, flats, cove, Pow
 - **Date:** March 26, 1715. Laid out by the Selectmen.
 - **Cite:** printed pp. 105–107; original Vol. a, Page 97; text lines ~5443–5524.
 - **Key text:** The highway is 30 feet wide, from the Captain's Nook (at the partition fence between the farms of Miles Standish and Thomas Delanoe Jr.) up to the Marshfield–Plymouth road. **Memo:** "a convenient cart way is allowed **down to the Bay** through the farm of said Standish, which is also allowed by said Standish's consent."
-- **Likely modern site:** 19 Miles Standish Home Site, or possibly the Standish Shore and Hicks Point area. *ASSUMED.*
+- **Likely modern site:** WW-06 Miles Standish Home Site (numbered 19 before 2026-11-09), or possibly the Standish Shore and Hicks Point area. *ASSUMED.*
 
 ## 4. Captain's Nook highway re-laid with compass bearings, plus a way "down to the salt bay ... forever" (1766)
 
@@ -45,13 +45,13 @@ Searched 2026-11-09 for: landing, highway, to the water, beach, flats, cove, Pow
 - **Cite:** printed pp. 338–339; text lines ~18468–18497.
 - 1767: the town voted that the selectmen "lay out the way that leads from Plymouth into Powder Point."
 - March 14, 1768 (original Record No. 5, Page 101): Major Alden was allowed to set a gate across "the high way that leads to Powder Point near the dwelling house of Amaziah Delanoe's, provided the said Alden gives or allows a good cart way... into Powder Point."
-- **Likely modern sites:** 05 Powder Point Landing / 06 Powder Point Bridge, for road access only. *ASSUMED.*
+- **Likely modern sites:** 06 Powder Point Landing / 07 Powder Point Bridge (numbered 05/06 before 2026-11-09), for road access only. *ASSUMED.*
 
 ## Context: Duxbury Beach title (1767)
 - Printed p. 338 (corrected from "337–338"). A committee (Briggs Alden, Ezra Arnold, Wait Wadsworth) found that General Winslow and Edward Winslow "have no legal claim or title to said beach." This is not one of our sites, but it shows the town asserting its title to the shore.
 
 ## Also found while checking pages: Joseph Drew dam on Bluefish River (1766)
-- Printed p. 335. At the Town Meeting of March 31, 1766, "the town gave liberty to Joseph Drew and his partners to build a dam and Gristmill on Blue fish river." This is context for Site 08 and is linked on that page.
+- Printed p. 335. At the Town Meeting of March 31, 1766, "the town gave liberty to Joseph Drew and his partners to build a dam and Gristmill on Blue fish river." This is context for Site 09 Bluefish River (formerly 08) and is linked on that page.
 
 ## Page images and site links
 - Page images: `pages/p{printed page}.jpg`, rendered at 150 dpi from the PDF. PDF page = printed page + 6 (checked at printed pp. 94–124 and 236–340).

@@ -1,0 +1,16 @@
+# Samoset Road
+
+**Category:** Way to the Water
+**ID:** WW-03
+**Address:** Samoset Road, Duxbury MA
+**Coordinates:** 42.009834, -70.668812
+
+## Parking
+Unknown
+
+## Notes
+Boatslip access; location approximate
+
+## Maps
+- `overview.png` — Full Duxbury Bay area, site marked in red
+- `detail.png` — Close-up (~750m radius), site marked in red

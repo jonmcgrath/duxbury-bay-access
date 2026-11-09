@@ -1,0 +1,26 @@
+{
+  "_about": "Old site folder -> new site folder. generate-html.js writes a redirect page at each old path so earlier links keep working. Added 2026-11-09 when sites were re-categorized to match the bylaw.",
+  "redirects": {
+    "WW-01-simeon-soules-landing": "04-simeon-soules-landing",
+    "WW-04-petersons-landing": "05-petersons-landing",
+    "05-powder-point-landing": "06-powder-point-landing",
+    "06-powder-point-bridge-west-end": "07-powder-point-bridge-west-end",
+    "07-anchorage-lane-landing": "08-anchorage-lane-landing",
+    "08-bluefish-river-landing": "09-bluefish-river-landing",
+    "14-water-street-landing": "12-water-street-landing",
+    "12-jocelyn-lane-landing": "13-jocelyn-lane-landing",
+    "15-harden-hill-road-landing": "14-harden-hill-road-landing",
+    "20-howlands-landing": "15-howlands-landing",
+    "21-landing-road-beach": "16-landing-road-beach",
+    "18-hicks-point-road-landing": "17-hicks-point-road-landing",
+    "04-shipyard-lane-ellison-beach": "WW-01-shipyard-lane-ellison-beach",
+    "WW-03-somerset-road": "WW-03-samoset-road",
+    "09-sagamore-road-landing": "WW-04-sagamore-road-landing",
+    "13-massasoit-road-landing": "WW-05-massasoit-road-landing",
+    "19-miles-standish-home-site": "WW-06-miles-standish-home-site",
+    "WW-05-longview-road": "WW-07-longview-road",
+    "16-elderberry-lane": "WW-08-elderberry-lane",
+    "17-bay-farm": "WW-09-bay-farm",
+    "22-island-creek-pond": "WW-10-island-creek-pond"
+  }
+}
