@@ -15,6 +15,7 @@ const ALL_SITES     = require('./sites.json').map(s => ({
   ...s,
   color: s.category === 'town-landing' ? '#C0392B' : '#1A6FA8',
 }));
+const HISTORY       = require('./history.json');
 const TOWN_LANDINGS = ALL_SITES.filter(s => s.category === 'town-landing');
 const WAYS_TO_WATER = ALL_SITES.filter(s => s.category === 'way-to-water');
 
@@ -197,6 +198,50 @@ function categoryLabel(site) {
 }
 function accentColor(site) {
   return site.category === 'town-landing' ? '#C0392B' : '#1A6FA8';
+}
+
+function escapeHTML(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Historical records section, from history.json. Page images are linked
+// relative to the site folder (one level below the project root).
+function historySectionHTML(site) {
+  const recs = HISTORY.records[site.id] || [];
+  if (!recs.length) {
+    return `<section id="history">
+    <h2>Historical Records</h2>
+    <div class="placeholder">
+      <p>No historical records found yet.</p>
+      <small>Deeds, town meeting votes, and layouts for this site will be added here.</small>
+    </div>
+  </section>`;
+  }
+  const usedSources = new Set();
+  const items = recs.map(r => {
+    const src = HISTORY.sources[r.source];
+    usedSources.add(r.source);
+    const links = r.pages.map(p =>
+      `<a href="../${src.pagesDir}/p${p}.jpg" target="_blank" rel="noopener">p. ${p} ↗</a>`).join('');
+    return `<li>
+        <span class="rec-date">${escapeHTML(r.date)}</span>${escapeHTML(r.title)}
+        ${r.siteMatch === 'assumed' ? '<span class="rec-assumed" title="The link between this record and this modern site is assumed from place names, not yet verified">site match assumed</span>' : ''}
+        <blockquote>“${escapeHTML(r.quote)}”</blockquote>
+        <div class="rec-cite">${escapeHTML(r.by)}. ${escapeHTML(src.title)}, p. ${r.pages.join(', ')}${r.original ? ` (original ${escapeHTML(r.original)})` : ''}.</div>
+        <div class="rec-pages">${links}</div>
+      </li>`;
+  }).join('\n      ');
+  const sourceNotes = [...usedSources].map(k => {
+    const s = HISTORY.sources[k];
+    return `<em>${escapeHTML(s.title)}</em>. ${escapeHTML(s.detail)} <a href="${s.url}" target="_blank" rel="noopener">Full book ↗</a>`;
+  }).join('<br>');
+  return `<section id="history">
+    <h2>Historical Records</h2>
+    <ul class="records">
+      ${items}
+    </ul>
+    <p class="records-source">${sourceNotes}</p>
+  </section>`;
 }
 
 function generateSiteHTML(site, prev, next) {
@@ -385,6 +430,25 @@ function generateSiteHTML(site, prev, next) {
     }
     .home-tab:hover { background: rgba(44,62,80,0.90); }
 
+    /* ── Historical records ── */
+    .records { list-style: none; margin: 0; padding: 0; }
+    .records li { padding: 14px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+    .records li:last-child { border-bottom: none; }
+    .records .rec-date { font-weight: bold; color: ${accent}; margin-right: 8px; }
+    .records blockquote {
+      margin: 8px 0; padding: 6px 12px; border-left: 3px solid #ccc;
+      font-style: italic; color: #444;
+    }
+    .records .rec-cite { font-size: 12px; color: #666; }
+    .records .rec-pages a {
+      display: inline-block; margin: 6px 6px 0 0; padding: 4px 10px;
+      border: 1px solid ${accent}; border-radius: 4px; color: ${accent};
+      text-decoration: none; font-size: 12px;
+    }
+    .records .rec-pages a:hover { background: ${accent}; color: white; }
+    .rec-assumed { font-size: 11px; background: #fff4d6; color: #8a6100; padding: 1px 6px; border-radius: 3px; }
+    .records-source { font-size: 12px; color: #666; margin-top: 12px; }
+
     @media (max-width: 700px) {
       .map-pair { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
@@ -405,6 +469,7 @@ function generateSiteHTML(site, prev, next) {
 <nav>
   <a href="#maps">Maps</a>
   <a href="#parking">Parking</a>
+  <a href="#history">Historical Records</a>
   <a href="#conditions">Existing Conditions</a>
   <a href="#mitigation">Mitigation Plans</a>
   <span style="flex:1"></span>
@@ -464,6 +529,9 @@ function generateSiteHTML(site, prev, next) {
     </dl>
     ${site.notes ? `<p style="margin-top:14px;font-size:14px;color:#444;">${site.notes}</p>` : ''}
   </section>
+
+  <!-- ── Historical Records ── -->
+  ${historySectionHTML(site)}
 
   <!-- ── Existing Conditions ── -->
   <section id="conditions">

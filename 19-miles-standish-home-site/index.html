@@ -168,6 +168,25 @@
     }
     .home-tab:hover { background: rgba(44,62,80,0.90); }
 
+    /* ── Historical records ── */
+    .records { list-style: none; margin: 0; padding: 0; }
+    .records li { padding: 14px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+    .records li:last-child { border-bottom: none; }
+    .records .rec-date { font-weight: bold; color: #C0392B; margin-right: 8px; }
+    .records blockquote {
+      margin: 8px 0; padding: 6px 12px; border-left: 3px solid #ccc;
+      font-style: italic; color: #444;
+    }
+    .records .rec-cite { font-size: 12px; color: #666; }
+    .records .rec-pages a {
+      display: inline-block; margin: 6px 6px 0 0; padding: 4px 10px;
+      border: 1px solid #C0392B; border-radius: 4px; color: #C0392B;
+      text-decoration: none; font-size: 12px;
+    }
+    .records .rec-pages a:hover { background: #C0392B; color: white; }
+    .rec-assumed { font-size: 11px; background: #fff4d6; color: #8a6100; padding: 1px 6px; border-radius: 3px; }
+    .records-source { font-size: 12px; color: #666; margin-top: 12px; }
+
     @media (max-width: 700px) {
       .map-pair { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
@@ -188,6 +207,7 @@
 <nav>
   <a href="#maps">Maps</a>
   <a href="#parking">Parking</a>
+  <a href="#history">Historical Records</a>
   <a href="#conditions">Existing Conditions</a>
   <a href="#mitigation">Mitigation Plans</a>
   <span style="flex:1"></span>
@@ -246,6 +266,28 @@
       <dd>Town Landing</dd>
     </dl>
     <p style="margin-top:14px;font-size:14px;color:#444;">Historic site; Myles Standish Monument on Shantum Lane</p>
+  </section>
+
+  <!-- ── Historical Records ── -->
+  <section id="history">
+    <h2>Historical Records</h2>
+    <ul class="records">
+      <li>
+        <span class="rec-date">1715-03-26</span>Captain's Nook highway (30 ft) and a cart way down to the Bay through the Standish farm
+        <span class="rec-assumed" title="The link between this record and this modern site is assumed from place names, not yet verified">site match assumed</span>
+        <blockquote>“a convenient cart way is allowed down to the Bay through the farm of said Standish, which is also allowed by said Standish's consent”</blockquote>
+        <div class="rec-cite">Selectmen Edward Southworth, John Simons, John Partridge. Copy of the Old Records of the Town of Duxbury, Mass., from 1642 to 1770, p. 105, 106, 107 (original Vol. a, p. 97).</div>
+        <div class="rec-pages"><a href="../sources/duxbury-town-records-1642-1770/pages/p105.jpg" target="_blank" rel="noopener">p. 105 ↗</a><a href="../sources/duxbury-town-records-1642-1770/pages/p106.jpg" target="_blank" rel="noopener">p. 106 ↗</a><a href="../sources/duxbury-town-records-1642-1770/pages/p107.jpg" target="_blank" rel="noopener">p. 107 ↗</a></div>
+      </li>
+      <li>
+        <span class="rec-date">1766-03-31</span>Captain's Nook highway re-laid with compass bearings; way through Capt. Wait Wadsworth's land down to the salt bay
+        <span class="rec-assumed" title="The link between this record and this modern site is assumed from place names, not yet verified">site match assumed</span>
+        <blockquote>“there is a way through Capt. Wait Wadsworth's land, down to the salt bay, where it may be the most beneficial and least prejudicial to each other, forever”</blockquote>
+        <div class="rec-cite">Selectmen Ezra Arnold, John Wadsworth; accepted at Town Meeting. Copy of the Old Records of the Town of Duxbury, Mass., from 1642 to 1770, p. 335, 336, 337.</div>
+        <div class="rec-pages"><a href="../sources/duxbury-town-records-1642-1770/pages/p335.jpg" target="_blank" rel="noopener">p. 335 ↗</a><a href="../sources/duxbury-town-records-1642-1770/pages/p336.jpg" target="_blank" rel="noopener">p. 336 ↗</a><a href="../sources/duxbury-town-records-1642-1770/pages/p337.jpg" target="_blank" rel="noopener">p. 337 ↗</a></div>
+      </li>
+    </ul>
+    <p class="records-source"><em>Copy of the Old Records of the Town of Duxbury, Mass., from 1642 to 1770</em>. Transcribed 1892 by George Etheridge; printed Plymouth: Avery &amp; Doten, 1893. Secondary source (transcription of the original manuscript books). <a href="https://archive.org/details/copyofoldrecordsd00duxb" target="_blank" rel="noopener">Full book ↗</a></p>
   </section>
 
   <!-- ── Existing Conditions ── -->

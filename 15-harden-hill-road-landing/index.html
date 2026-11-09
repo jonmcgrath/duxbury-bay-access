@@ -168,6 +168,25 @@
     }
     .home-tab:hover { background: rgba(44,62,80,0.90); }
 
+    /* ── Historical records ── */
+    .records { list-style: none; margin: 0; padding: 0; }
+    .records li { padding: 14px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+    .records li:last-child { border-bottom: none; }
+    .records .rec-date { font-weight: bold; color: #C0392B; margin-right: 8px; }
+    .records blockquote {
+      margin: 8px 0; padding: 6px 12px; border-left: 3px solid #ccc;
+      font-style: italic; color: #444;
+    }
+    .records .rec-cite { font-size: 12px; color: #666; }
+    .records .rec-pages a {
+      display: inline-block; margin: 6px 6px 0 0; padding: 4px 10px;
+      border: 1px solid #C0392B; border-radius: 4px; color: #C0392B;
+      text-decoration: none; font-size: 12px;
+    }
+    .records .rec-pages a:hover { background: #C0392B; color: white; }
+    .rec-assumed { font-size: 11px; background: #fff4d6; color: #8a6100; padding: 1px 6px; border-radius: 3px; }
+    .records-source { font-size: 12px; color: #666; margin-top: 12px; }
+
     @media (max-width: 700px) {
       .map-pair { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
@@ -188,6 +207,7 @@
 <nav>
   <a href="#maps">Maps</a>
   <a href="#parking">Parking</a>
+  <a href="#history">Historical Records</a>
   <a href="#conditions">Existing Conditions</a>
   <a href="#mitigation">Mitigation Plans</a>
   <span style="flex:1"></span>
@@ -246,6 +266,15 @@
       <dd>Town Landing</dd>
     </dl>
     <p style="margin-top:14px;font-size:14px;color:#444;">Time-restricted parking</p>
+  </section>
+
+  <!-- ── Historical Records ── -->
+  <section id="history">
+    <h2>Historical Records</h2>
+    <div class="placeholder">
+      <p>No historical records found yet.</p>
+      <small>Deeds, town meeting votes, and layouts for this site will be added here.</small>
+    </div>
   </section>
 
   <!-- ── Existing Conditions ── -->

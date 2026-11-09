@@ -1,0 +1,91 @@
+{
+  "_about": "Historical records per site, keyed by site id from sites.json. 'pages' are printed page numbers in the source; images live at {source.pagesDir}/p{page}.jpg. 'siteMatch' records whether the link between the old record and the modern site is verified or assumed. Full citations and verification notes: sources/duxbury-town-records-1642-1770/FINDINGS.md",
+  "sources": {
+    "etheridge-1893": {
+      "title": "Copy of the Old Records of the Town of Duxbury, Mass., from 1642 to 1770",
+      "detail": "Transcribed 1892 by George Etheridge; printed Plymouth: Avery & Doten, 1893. Secondary source (transcription of the original manuscript books).",
+      "url": "https://archive.org/details/copyofoldrecordsd00duxb",
+      "pagesDir": "sources/duxbury-town-records-1642-1770/pages"
+    }
+  },
+  "records": {
+    "08": [
+      {
+        "date": "1715-05-20",
+        "title": "Old landing place laid out as a common town landing; 40 ft highway to the Marshfield–Plymouth road",
+        "quote": "allowing all the ground on the Southerly side of the said fence to bluefish river channel, for a common landing place for said town",
+        "by": "Selectmen Edward Southworth, John Simons Sen., John Partridge; recorded by John Wadsworth, Town Clerk",
+        "source": "etheridge-1893",
+        "pages": [107, 108],
+        "original": "Vol. a, p. 99",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1718-03-28",
+        "title": "Town meeting: Abraham Samson may gate the highway, and grants the town the landing privilege forever",
+        "quote": "the benefit and privilege of the said landing place for the landing and carrying away their hay &c forever",
+        "by": "Town Meeting; signed Abraham Sampson",
+        "source": "etheridge-1893",
+        "pages": [237],
+        "original": "Vol. a, p. 300",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1766-03-31",
+        "title": "Town meeting: Joseph Drew and partners allowed to build a dam and gristmill on Bluefish River",
+        "quote": "The town gave liberty to Joseph Drew and his partners to build a dam and Gristmill on Blue fish river",
+        "by": "Town Meeting",
+        "source": "etheridge-1893",
+        "pages": [335],
+        "original": "",
+        "siteMatch": "assumed"
+      }
+    ],
+    "19": [
+      {
+        "date": "1715-03-26",
+        "title": "Captain's Nook highway (30 ft) and a cart way down to the Bay through the Standish farm",
+        "quote": "a convenient cart way is allowed down to the Bay through the farm of said Standish, which is also allowed by said Standish's consent",
+        "by": "Selectmen Edward Southworth, John Simons, John Partridge",
+        "source": "etheridge-1893",
+        "pages": [105, 106, 107],
+        "original": "Vol. a, p. 97",
+        "siteMatch": "assumed"
+      },
+      {
+        "date": "1766-03-31",
+        "title": "Captain's Nook highway re-laid with compass bearings; way through Capt. Wait Wadsworth's land down to the salt bay",
+        "quote": "there is a way through Capt. Wait Wadsworth's land, down to the salt bay, where it may be the most beneficial and least prejudicial to each other, forever",
+        "by": "Selectmen Ezra Arnold, John Wadsworth; accepted at Town Meeting",
+        "source": "etheridge-1893",
+        "pages": [335, 336, 337],
+        "original": "",
+        "siteMatch": "assumed"
+      }
+    ],
+    "05": [
+      {
+        "date": "1767–1768",
+        "title": "Selectmen to lay out the way into Powder Point; gate allowed only if a good cart way is kept open",
+        "quote": "provided the said Alden gives or allows a good cart way through his way as is usual, into Powder Point",
+        "by": "Town Meetings 1767 and March 14, 1768",
+        "source": "etheridge-1893",
+        "pages": [338, 339],
+        "original": "Record No. 5, p. 101",
+        "siteMatch": "assumed"
+      }
+    ],
+    "06": [
+      {
+        "date": "1767–1768",
+        "title": "Selectmen to lay out the way into Powder Point; gate allowed only if a good cart way is kept open",
+        "quote": "provided the said Alden gives or allows a good cart way through his way as is usual, into Powder Point",
+        "by": "Town Meetings 1767 and March 14, 1768",
+        "source": "etheridge-1893",
+        "pages": [338, 339],
+        "original": "Record No. 5, p. 101",
+        "siteMatch": "assumed"
+      }
+    ]
+  }
+}
