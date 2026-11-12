@@ -96,6 +96,9 @@ Create two map versions for each public landing/way to the water in Duxbury, MA:
 - Two PNG files per site: `overview.png` and `detail.png`
 - One folder per site named with number and slug (e.g., `01-ford-stand-landing/`)
 
+## RECORDS RESEARCH
+- Historical records (deeds, layouts, votes) live in `history.json`; what is still missing is in `RECORDS-TODO.md` (updated 2026-11-11).
+
 ## NOTES / BLOCKERS
 - ~~PDF is image-based (scanned)~~ Corrected 2026-11-09: the PDF has a text layer; see INSIGHTS.md "Town Landings vs Ways to the Water"
 - Site list confirmed complete by user

@@ -47,7 +47,7 @@ Deeds cited in the 1899 report:
 - **06/07 Powder Point:** 1899 "Highway to the Sea"; 1902 F. B. Knapp quitclaim reversed; 1916 King Caesar Rd junction improvement; 1922 Cedar Pond landing article postponed.
 - **14 Harden Hill:** 1941 Art. 32 named "Hardin Hill Road" (Town Report 1941 p. 136); 1904 p. 58 layout change through Sisters of St. Margaret land.
 - **17 Hicks Point and 16 Landing Road:** 1906 report recommends both; **March 8, 1909** voted that Selectmen lay out a landing at Hicks Point "and another through the property of Mrs. Foote", $500. Town plan dated 9/12/09 for Landing Road.
-- **15 Howland's:** 1895 Art. 10; **1896** voted to accept "the road and landing near Allen's Wharf … as laid out by the Selectmen"; 1915 road repairs; 1931 Art. 40 named Howland's Lane. **This conflicts with the NSRWA claim that the town bought it in 1894.** *Unresolved.*
+- **15 Howland's:** 1895 Art. 10; voted **March 4, 1895** (the report prints it in the 1896 Town Report; corrected 2026-11-11 from the original page) to accept "the road and landing near Allen's Wharf … as laid out by the Selectmen"; 1915 road repairs; 1931 Art. 40 named Howland's Lane. **This conflicts with the NSRWA claim that the town bought it in 1894.** *Unresolved.*
 - **13 Jocelyn ("Josselyn Avenue"):** March 4, 1907 highway accepted over land of John E. Josselyn.
 - **12 Water St:** 1899 highway near James K. Burgess house accepted "providing there is no land damage"; 1900–01 extension to the shore accepted; land given by Charles C. Clapp.
 - **11 Winsor St:** 1908 Selectmen took steps to establish a landing after public bathing rights were questioned; widening 1919–1922 (tabled 1922).
@@ -62,3 +62,6 @@ Deeds cited in the 1899 report:
 - **A. St. George Street vs. Bluefish River.** The 1975 report lists **16 shore landings**: Mattakeeset, Old Cove, Drew, Simeon Soule, Peterson, Powder Point (one site, both sides), **St. George Street (by Old Mill Pond)**, **Old Mill (Blue Fish River, by Old Mill Dam)**, Winsor, Water, Josselyn, Hardin Hill, Howlands, Landing Road, Hicks Point, Ford's Stand. It ties 1899 #6 to **St. George Street**. This project has no St. George Street site but has two Powder Point sites (06 and 07). So either 06 Powder Point Landing is misplaced or the project is missing St. George St. Check against Plan Book 2 p. 6. *Our history.json puts the 1715 landing on 09 Bluefish; that may belong to St. George St.*
 - **B. The "16 town landings" count** in the 2011 plan probably matches this list of 16, which includes Howland's. *Assumed.*
 - **C. 1975 recommendation format** (parking limits, foot landings) is a useful baseline for comparing current conditions.
+
+## 6. Checked against the original Annual Town Reports (2026-11-11)
+Most of the votes quoted above were found in the original printed reports on Internet Archive and are now cited from there. See `../duxbury-annual-reports/FINDINGS.md`. Corrections: Howland's acceptance was **March 4, 1895** (not 1896); the Ellen F. Adams vote (Drew) was **March 6, 1905** (not 1904); the Mattakeesett highway vote and the Knapp quitclaim reversal were at the **March 3, 1902** meeting.

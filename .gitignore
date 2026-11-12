@@ -4,3 +4,9 @@ package-lock.json
 
 # Full source PDFs (page images in sources/*/pages are committed instead)
 sources/**/*.pdf
+
+# Local shortcuts (private docs; not for the public site)
+*.url
+
+# Internet Archive OCR of the Annual Town Reports (search index only; ~40 MB)
+sources/duxbury-annual-reports/ocr/

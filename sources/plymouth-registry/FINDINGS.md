@@ -34,3 +34,7 @@ Goal: find the recorded survey of each town landing. Bylaw Art. 300 §302 define
 1. View Plan Book 7 p. 183 (1944 Protective By-Law plan) at the Registry or with a TitleView account. It may list every landing.
 2. Ask the Duxbury Town Clerk / Harbormaster / DPW for the 1975 Town Landings Committee Report. It probably cites the book and page for each landing.
 3. Look up post-1966 plans by Plan Book in TitleView once image viewing works.
+
+## 2026-11-11 update
+- **Plan Book 2 p. 6 is in TitleView**: Search Criteria → Plans → *Unindexed Plan Books (1–18)*, Book 2, Page 6 returns one PLAN row. "View Images" again did nothing in Chrome through the extension (third failure overall). It is probably a pop-up blocker; the site has a "Test Pop-up blockers" link. Jon to try in his own browser.
+- What is still needed at the Registry is listed in `../../RECORDS-TODO.md`.
